@@ -1,0 +1,9 @@
+services:
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379'
+  weaviate:
+    image: 'semitechnologies/weaviate:latest'
+    ports:
+      - '8080'
