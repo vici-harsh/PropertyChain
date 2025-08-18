@@ -26,6 +26,7 @@ contract PropertyOwnership {
         propertyCount++;
         address[] memory prev = new address[](0);
         properties[propertyCount] = PropertyDetails(propertyCount, _currentOwner, _propertyAddress, _description, prev);
+        if (properties[propertyCount].propertyId != propertyCount) revert("Property ID mismatch");
         return true;
     }
 

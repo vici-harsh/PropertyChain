@@ -1,7 +1,27 @@
 const PropertyOwnership = artifacts.require("PropertyOwnership");
 const PropertyEscrow = artifacts.require("PropertyEscrow");
 
-module.exports = function (deployer) {
-  deployer.deploy(PropertyOwnership);
-  deployer.deploy(PropertyEscrow, "0xBc44B4F6b1E57d60639945A752E7225cA17702Ba", "0x2CE754fEad1dbDDFc5b5823fC51Dd380e668910a", 1, Math.floor(Date.now() / 1000) + 3600, { value: web3.utils.toWei("1", "ether") });
+module.exports = async function (deployer, network, accounts) {
+  // Deploy PropertyOwnership first
+  await deployer.deploy(PropertyOwnership);
+  const po = await PropertyOwnership.deployed();
+
+  // Optionally: add an initial property (from contractOwner)
+  await po.addProperty(
+    accounts[0],
+    "123 Main St",
+    "Test Property",
+    { from: accounts[0] }
+  );
+
+  // Deploy PropertyEscrow with 1 ETH
+  const releaseTime = Math.floor(Date.now() / 1000) + 3600; // 1 hour from now
+  await deployer.deploy(
+    PropertyEscrow,
+    accounts[1], // seller
+    accounts[2], // arbiter
+    1,          // propertyId
+    releaseTime,
+    { value: web3.utils.toWei("1", "ether") }
+  );
 };
