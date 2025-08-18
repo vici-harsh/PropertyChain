@@ -1,0 +1,30 @@
+# Java/Spring Boot
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+mvnw
+mvnw.cmd
+
+# Node.js/React
+node_modules/
+.pnp
+.pnp.js
+build/
+dist/
+
+# Solidity/Ethereum
+artifacts/
+cache/
+typechain/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# General
+.DS_Store
+.env
+*.tmp
