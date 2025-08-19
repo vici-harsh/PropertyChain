@@ -1,23 +1,26 @@
-package com.propertychain.main.repository;
+package com.propertychain.admin.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 @Service
 public class PropertyRedisService {
 
     private final RedisTemplate<String, Object> redisTemplate;
     private final HashOperations<String, String, Object> hashOps;
-    private final SetOperations<String, Object> setOps;
 
     @Autowired
     public PropertyRedisService(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
         this.hashOps = redisTemplate.opsForHash();
-        this.setOps = redisTemplate.opsForSet();
     }
 
     public void saveProperty(Long propertyId, String address, String owner, String description) {
@@ -26,7 +29,7 @@ public class PropertyRedisService {
         hashOps.put(key, "address", address);
         hashOps.put(key, "owner", owner);
         hashOps.put(key, "description", description);
-        setOps.add("properties", propertyId.toString());
+        redisTemplate.expire(key, 30, TimeUnit.DAYS);
     }
 
     public Map<String, Object> getProperty(Long propertyId) {
@@ -34,13 +37,11 @@ public class PropertyRedisService {
     }
 
     public List<Map<String, Object>> getAllProperties() {
-        Set<Object> ids = setOps.members("properties");
-        List<Map<String, Object>> list = new ArrayList<>();
-        if(ids != null) {
-            for (Object id : ids) {
-                list.add(getProperty(Long.parseLong(id.toString())));
-            }
+        Set<String> keys = redisTemplate.keys("property:*");
+        List<Map<String, Object>> properties = new ArrayList<>();
+        for (String key : keys) {
+            properties.add(hashOps.entries(key));
         }
-        return list;
+        return properties;
     }
 }

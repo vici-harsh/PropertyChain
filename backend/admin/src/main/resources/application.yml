@@ -4,39 +4,22 @@ spring:
     port: 6379
     timeout: 60000
 
-  datasource:
-    url: jdbc:mysql://localhost:3306/propertychain
-    username: your_mysql_username  # Replace with your MySQL username (e.g., 'root')
-    password: your_mysql_password  # Replace with your MySQL password
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update  # Creates tables automatically; use 'none' for production
-    show-sql: true     # Helpful for debugging
-  data:
-    redis:
-      host: localhost
-      port: 6379
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: propertychain-group
       auto-offset-reset: earliest
+
   web:
     resources:
       static-locations: classpath:/static/
-  security:
-    user:
-      name: admin
-      password: password  # Change for production
 
-web3j:
-  client-address: http://localhost:8545  # Ganache endpoint
-  # Optional: Add gas settings if needed
-  # gas-price: 20000000000
-  # gas-limit: 6721975
+ethereum:
+  node-url: http://localhost:8545
+  ownership-contract-address: ${OWNERSHIP_CONTRACT_ADDRESS}
+  escrow-contract-address: ${ESCROW_CONTRACT_ADDRESS}
+  private-key: ${PRIVATE_KEY}
 
-# Logging (optional for debugging)
 logging:
   level:
     org.springframework: INFO

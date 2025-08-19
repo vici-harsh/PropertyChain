@@ -1,9 +1,10 @@
-package com.propertychain.main.controller;
+package com.propertychain.admin.controller;
 
-import com.propertychain.main.service.PropertyService;
+import com.propertychain.admin.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +25,21 @@ public class PropertyController {
     public String transferOwnership(@PathVariable Long id, @RequestBody Map<String, String> req) throws Exception {
         propertyService.transferOwnership(id, req.get("newOwner"));
         return "Ownership transferred successfully";
+    }
+
+    @PostMapping("/{id}/escrow")
+    public String createEscrow(@PathVariable Long id, @RequestBody Map<String, String> req) throws Exception {
+        BigInteger value = new BigInteger(req.get("value"));
+        BigInteger releaseTime = new BigInteger(req.get("releaseTime"));
+
+        propertyService.createEscrow(
+                id,
+                req.get("seller"),
+                req.get("arbiter"),
+                value,
+                releaseTime
+        );
+        return "Escrow created successfully";
     }
 
     @GetMapping
