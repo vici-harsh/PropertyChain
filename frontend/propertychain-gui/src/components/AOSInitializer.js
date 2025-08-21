@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { initAOS } from '../utils/templateUtils';
 
 function AOSInitializer() {

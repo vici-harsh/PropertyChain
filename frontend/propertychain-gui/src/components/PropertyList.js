@@ -16,7 +16,7 @@ function PropertyList({ account }) {
           {properties.map(prop => (
             <div class="col-lg-4 col-md-6">
               <div class="property-item">
-                <img src="assets/img/property-1.jpg" alt="Property" className="img-fluid" />
+                <img src={require('../img/properties/property-1.jpg')} alt="Property 1" className="img-fluid" />
                 <div class="property-content">
                   <div class="price"><span>Rent</span> <strong>$1200</strong></div>
                   <h3><a href="#">{prop.address}</a></h3>

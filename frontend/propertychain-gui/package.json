@@ -2,7 +2,13 @@
   "name": "propertychain-gui",
   "version": "0.1.0",
   "private": true,
+  "resolutions": {
+    "@srexi/purecounterjs": {
+      "source-map-loader": false
+    }
+  },
   "dependencies": {
+    "@srexi/purecounterjs": "^1.5.0",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
@@ -19,7 +25,7 @@
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.8.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "swiper": "^11.2.10",
     "web-vitals": "^2.1.4",
     "web3": "^4.16.0"
@@ -36,8 +42,8 @@
       "react-app/jest"
     ],
     "env": {
-    "browser": true,
-    "es2021": true
+      "browser": true,
+      "es2021": true
     },
     "globals": {
       "AOS": "readonly",
@@ -45,7 +51,7 @@
       "PureCounter": "readonly"
     },
     "rules": {
-      "no-undef": "off" 
+      "no-undef": "off"
     }
   },
   "browserslist": {
@@ -61,3 +67,4 @@
     ]
   }
 }
+

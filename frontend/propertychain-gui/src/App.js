@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { initSwiperSliders, initPureCounter } from '../utils/templateUtils';
+import './css/main.css';
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,13 +11,12 @@ import CreateEscrow from './components/CreateEscrow';
 import PropertyHistory from './components/PropertyHistory';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import PropertySingle from './components/PropertySingle';
 import Agents from './components/Agents';
 import Contact from './components/Contact';
 import AOSInitializer from './components/AOSInitializer';
-import Swiper from 'swiper';
 import 'swiper/css';
 import Hero from './components/Hero';
+import { initSwiperSliders, initPureCounter, toggleScrolled } from './/utils/templateUtils';
 
 
 function App() {
