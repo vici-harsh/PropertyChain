@@ -1715,6 +1715,12 @@ section,
   color: var(--accent-color);
 }
 
+.purecounter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e1e;
+}
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/

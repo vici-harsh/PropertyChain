@@ -3,20 +3,17 @@ import React from 'react';
 function Services() {
   return (
     <section id="services" className="services">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-4 col-md-6">
-            <div className="icon-box">
-              <div className="icon"><i className="fas fa-heart"></i></div>
-              <h4 className="title"><a href="">Nesciunt Mete</a></h4>
-              <p className="description">Provident nihil minus qui consequatur non omnis maiores.</p>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6">
-            <div className="icon-box">
-              <div className="icon"><i className="fas fa-bar-chart"></i></div>
-              <h4 className="title"><a href="">Eosle Commodi</a></h4>
-              <p className="description">Ut autem aut autem non a. Sint sint sit facilis nam iusto sint.</p>
+      <div class="container">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Odio et unde deleniti. Deserunt numquam exercitationem.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-briefcase"></i></div>
+              <h4 class="title"><a href="">Nesciunt Mete</a></h4>
+              <p class="description">Provident nihil minus qui consequatur non omnis maiores.</p>
             </div>
           </div>
           // Add more icon-boxes from the HTML

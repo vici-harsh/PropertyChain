@@ -15,23 +15,6 @@ export function initAOS() {
   return () => window.removeEventListener('load', AOS.refresh);
 }
 
-// Custom function for Swiper with custom pagination (placeholder)
-export function initSwiperWithCustomPagination(swiperElement, config) {
-  // Placeholder implementation; enhance if template defines specific pagination
-  return new Swiper(swiperElement, config);
-}
-
-// Initialize Swiper sliders
-export function initSwiperSliders() {
-  document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
-    let config = JSON.parse(swiperElement.querySelector(".swiper-config")?.innerHTML.trim() || '{}');
-    if (swiperElement.classList.contains("swiper-tab")) {
-      initSwiperWithCustomPagination(swiperElement, config);
-    } else {
-      new Swiper(swiperElement, config);
-    }
-  });
-}
 
 // Initialize PureCounter for animated counters
 export function initPureCounter() {
