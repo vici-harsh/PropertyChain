@@ -1,4 +1,4 @@
-package com.propertychain.main.event;
+package com.propertychain.admin.event;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;

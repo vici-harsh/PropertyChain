@@ -22,10 +22,21 @@ public class EthereumService {
     private Web3j web3j;
     private PropertyOwnership ownershipContract;
     private PropertyEscrow escrowContract;
-    private Credentials credentials;
 
     @Value("${ethereum.node-url}")
     private String nodeUrl;
+
+    @Value("${ethereum.owner-private-key}")
+    private String ownerPrivateKey;
+
+    @Value("${ethereum.buyer-private-key}")
+    private String buyerPrivateKey;
+
+    @Value("${ethereum.seller-private-key}")
+    private String sellerPrivateKey;
+
+    @Value("${ethereum.arbiter-private-key}")
+    private String arbiterPrivateKey;
 
     @Value("${ethereum.ownership-contract-address}")
     private String ownershipContractAddress;
@@ -33,35 +44,31 @@ public class EthereumService {
     @Value("${ethereum.escrow-contract-address}")
     private String escrowContractAddress;
 
-    @Value("${ethereum.private-key}")
-    private String privateKey;
-
     @PostConstruct
     public void init() {
         this.web3j = Web3j.build(new HttpService(nodeUrl));
-        this.credentials = Credentials.create(privateKey);
         loadContracts();
     }
 
     private void loadContracts() {
         try {
-            // Load ownership contract
+            Credentials ownerCredentials = Credentials.create(ownerPrivateKey);
             ownershipContract = PropertyOwnership.load(
                     ownershipContractAddress,
                     web3j,
-                    credentials,
+                    ownerCredentials,
                     new DefaultGasProvider()
             );
-            logger.info("Loaded ownership contract at: {}", ownershipContractAddress);
+            logger.info("Loaded ownership contract at: {} with owner {}", ownershipContractAddress, ownerCredentials.getAddress());
 
-            // Load escrow contract
+            Credentials buyerCredentials = Credentials.create(buyerPrivateKey);
             escrowContract = PropertyEscrow.load(
                     escrowContractAddress,
                     web3j,
-                    credentials,
+                    buyerCredentials,
                     new DefaultGasProvider()
             );
-            logger.info("Loaded escrow contract at: {}", escrowContractAddress);
+            logger.info("Loaded escrow contract at: {} with buyer {}", escrowContractAddress, buyerCredentials.getAddress());
 
         } catch (Exception e) {
             logger.error("Contract loading failed: {}", e.getMessage());
@@ -69,16 +76,40 @@ public class EthereumService {
         }
     }
 
-    public Long addProperty(String propertyAddress, String description) throws Exception {
-        // Using contract owner as initial owner
-        String initialOwner = credentials.getAddress();
+    public Credentials getOwnerCredentials() {
+        return Credentials.create(ownerPrivateKey);
+    }
 
+    public Credentials getBuyerCredentials() {
+        return Credentials.create(buyerPrivateKey);
+    }
+
+    public Credentials getSellerCredentials() {
+        return Credentials.create(sellerPrivateKey);
+    }
+
+    public Credentials getArbiterCredentials() {
+        return Credentials.create(arbiterPrivateKey);
+    }
+
+    public Web3j getWeb3j() {
+        return web3j;
+    }
+
+    public PropertyOwnership getOwnershipContract() {
+        return ownershipContract;
+    }
+
+    public PropertyEscrow getEscrowContract() {
+        return escrowContract;
+    }
+
+    public Long addProperty(String propertyAddress, String description) throws Exception {
         TransactionReceipt receipt = ownershipContract.addProperty(
-                initialOwner,
+                getOwnerCredentials().getAddress(),
                 propertyAddress,
                 description
         ).send();
-
         logger.info("PropertyAdded TX: {}", receipt.getTransactionHash());
         return ownershipContract.propertyCount().send().longValue();
     }
@@ -102,20 +133,31 @@ public class EthereumService {
             BigInteger value,
             BigInteger releaseTime
     ) throws Exception {
-        // Deploy new escrow contract
         PropertyEscrow escrow = PropertyEscrow.deploy(
                 web3j,
-                credentials,
+                getBuyerCredentials(),
                 new DefaultGasProvider(),
+                value,
                 seller,
                 arbiter,
                 BigInteger.valueOf(propertyId),
-                releaseTime,
-                value
+                releaseTime
         ).send();
-
         String escrowAddress = escrow.getContractAddress();
         logger.info("New Escrow deployed at: {}", escrowAddress);
         return escrowAddress;
+    }
+
+    public void releaseFunds(Long propertyId) throws Exception {
+        TransactionReceipt receipt = escrowContract.releaseFunds().send();
+        logger.info("Funds released for property {}", propertyId);
+    }
+
+    /**
+     * Retrieves the deployed PropertyOwnership contract address.
+     * @return The address of the PropertyOwnership contract
+     */
+    public String getOwnershipContractAddress() {
+        return ownershipContractAddress;
     }
 }
