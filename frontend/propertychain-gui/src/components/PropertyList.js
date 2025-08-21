@@ -10,25 +10,28 @@ function PropertyList({ account }) {
   }, []);
 
   return (
-    <div className="container mt-5">
-      <h2>Property Listings</h2>
-      <div className="row">
-        {properties.map(prop => (
-          <div key={prop.id} className="col-md-4 mb-3">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{prop.address}</h5>
-                <p className="card-text">{prop.description}</p>
-                <p>Owner: {prop.blockchainOwner}</p>
-                <Link to={`/transfer/${prop.id}`} className="btn btn-primary">Transfer</Link>
-                <Link to={`/escrow/${prop.id}`} className="btn btn-secondary ml-2">Create Escrow</Link>
-                <Link to={`/history/${prop.id}`} className="btn btn-info ml-2">History</Link>
+    <section id="properties" className="properties">
+      <div class="container">
+        <div class="row">
+          {properties.map(prop => (
+            <div class="col-lg-4 col-md-6">
+              <div class="property-item">
+                <img src="assets/img/property-1.jpg" alt="Property" className="img-fluid" />
+                <div class="property-content">
+                  <div class="price"><span>Rent</span> <strong>$1200</strong></div>
+                  <h3><a href="#">{prop.address}</a></h3>
+                  <div class="location"><i class="fas fa-map-marker-alt"></i> {prop.address}</div>
+                  <div class="property-type"><i class="fas fa-home"></i> House</div>
+                  <Link to={`/transfer/${prop.id}`} className="btn btn-primary">Transfer</Link>
+                  <Link to={`/escrow/${prop.id}`} className="btn btn-secondary">Escrow</Link>
+                  <Link to={`/history/${prop.id}`} className="btn btn-info">History</Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

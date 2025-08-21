@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { initSwiperSliders, initPureCounter } from '../utils/templateUtils';
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,13 +11,34 @@ import CreateEscrow from './components/CreateEscrow';
 import PropertyHistory from './components/PropertyHistory';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import PropertySingle from './components/PropertySingle';
+import Agents from './components/Agents';
+import Contact from './components/Contact';
+import AOSInitializer from './components/AOSInitializer';
+import Swiper from 'swiper';
+import 'swiper/css';
+import Hero from './components/Hero';
+
 
 function App() {
   const [account, setAccount] = useState('');
 
+  useEffect(() => {
+    initSwiperSliders();
+    initPureCounter();
+    window.addEventListener('scroll', toggleScrolled);
+    window.addEventListener('load', toggleScrolled);
+    return () => {
+      window.removeEventListener('scroll', toggleScrolled);
+      window.removeEventListener('load', toggleScrolled);
+    };
+  }, []);
+
   return (
-    <div>
+    <>
+      <AOSInitializer />
       <Header account={account} />
+      <Hero />
       <Routes>
         <Route path="/" element={<Login setAccount={setAccount} />} />
         <Route path="/properties" element={<PropertyList account={account} />} />
@@ -23,10 +46,13 @@ function App() {
         <Route path="/transfer/:id" element={<TransferOwnership account={account} />} />
         <Route path="/escrow/:id" element={<CreateEscrow account={account} />} />
         <Route path="/history/:id" element={<PropertyHistory account={account} />} />
+        <Route path="/agents" element={<Agents />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
+
 
 export default App;

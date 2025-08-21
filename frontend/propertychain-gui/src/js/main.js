@@ -5,6 +5,63 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+import AOS from 'aos';
+import { Swiper } from 'swiper';
+import PureCounter from 'purecounterjs';
+import $ from 'jquery';
+
+// Initialize AOS
+export function initAOS() {
+  AOS.init({
+    duration: 600,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+  window.addEventListener('load', AOS.refresh);
+  return () => window.removeEventListener('load', AOS.refresh);
+}
+
+// Custom function for Swiper with custom pagination (placeholder implementation)
+export function initSwiperWithCustomPagination(swiperElement, config) {
+  // Implement custom pagination logic here if needed
+  // For now, fall back to default Swiper
+  return new Swiper(swiperElement, config);
+}
+
+// Initialize Swiper
+export function initSwiperSliders() {
+  document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    let config = JSON.parse(swiperElement.querySelector(".swiper-config").innerHTML.trim());
+    if (swiperElement.classList.contains("swiper-tab")) {
+      initSwiperWithCustomPagination(swiperElement, config);
+    } else {
+      new Swiper(swiperElement, config);
+    }
+  });
+}
+
+// Initialize PureCounter
+export function initPureCounter() {
+  new PureCounter();
+}
+
+// Other utility functions from main.js
+export function toggleScrolled() {
+  const selectBody = document.querySelector('body');
+  const selectHeader = document.querySelector('#header');
+  if (!selectHeader?.classList.contains('scroll-up-sticky') && !selectHeader?.classList.contains('sticky-top') && !selectHeader?.classList.contains('fixed-top')) return;
+  window.scrollY > 100 ? selectBody.classList.add('scrolled') : selectBody.classList.remove('scrolled');
+}
+
+export function mobileNavToggle() {
+  document.querySelector('body')?.classList.toggle('mobile-nav-active');
+  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.classList.toggle('bi-list');
+    mobileNavToggleBtn.classList.toggle('bi-x');
+  }
+}
 
 (function() {
   "use strict";
@@ -133,6 +190,8 @@
       }
     });
   }
+
+  
 
   window.addEventListener("load", initSwiper);
 

@@ -4,19 +4,22 @@ import { Link } from 'react-router-dom';
 
 function Header({ account }) {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand>PropertyChain</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link as={Link} to="/properties">Properties</Nav.Link>
-          <Nav.Link as={Link} to="/add-property">Add Property</Nav.Link>
-        </Nav>
-        <Nav className="ml-auto">
-          <Nav.Link>Account: {account ? account.slice(0, 6) + '...' + account.slice(-4) : 'Not Connected'}</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <header id="header" className="fixed-top">
+      <div className="container d-flex align-items-center">
+        <h1 className="logo me-auto"><Link to="/">EstateAgency</Link></h1>
+        <Navbar expand="lg" className="navbar">
+          <Nav className="navbar-nav">
+            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/services">Services</Nav.Link>
+            <Nav.Link as={Link} to="/properties">Properties</Nav.Link>
+            <Nav.Link as={Link} to="/agents">Agents</Nav.Link>
+            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+          </Nav>
+        </Navbar>
+        <p>Account: {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Not Connected'}</p>
+      </div>
+    </header>
   );
 }
 
