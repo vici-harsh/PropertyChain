@@ -45,10 +45,19 @@ public class PropertyService {
                 propertyId, currentOwner, newOwner);
     }
 
-    public void createEscrow(Long propertyId, String seller, String arbiter,
-                             BigInteger value, BigInteger releaseTime) throws Exception {
-        ethereumService.createEscrow(propertyId, seller, arbiter, value, releaseTime);
-        logger.info("EscrowCreated: property={}, seller={}, value={}",
-                propertyId, seller, value);
+    public String createEscrow(
+            Long propertyId,
+            String seller,
+            String arbiter,
+            BigInteger value,
+            BigInteger releaseTime
+    ) throws Exception {
+        return ethereumService.deployNewEscrow(
+                seller,
+                arbiter,
+                propertyId,
+                value,
+                releaseTime
+        );
     }
 }

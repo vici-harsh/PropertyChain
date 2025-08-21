@@ -27,19 +27,19 @@ public class PropertyController {
         return "Ownership transferred successfully";
     }
 
-    @PostMapping("/{id}/escrow")
+    PostMapping("/{id}/escrow")
     public String createEscrow(@PathVariable Long id, @RequestBody Map<String, String> req) throws Exception {
         BigInteger value = new BigInteger(req.get("value"));
         BigInteger releaseTime = new BigInteger(req.get("releaseTime"));
 
-        propertyService.createEscrow(
+        String escrowAddress = propertyService.createEscrow(
                 id,
                 req.get("seller"),
                 req.get("arbiter"),
                 value,
                 releaseTime
         );
-        return "Escrow created successfully";
+        return "Escrow deployed at: " + escrowAddress;
     }
 
     @GetMapping

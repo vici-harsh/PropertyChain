@@ -65,15 +65,16 @@ public class EthereumService {
 
         } catch (Exception e) {
             logger.error("Contract loading failed: {}", e.getMessage());
+            throw new RuntimeException("Contract loading failed", e);
         }
     }
 
     public Long addProperty(String propertyAddress, String description) throws Exception {
-        // Use the deployer's address as initial owner
-        String ownerAddress = credentials.getAddress();
+        // Using contract owner as initial owner
+        String initialOwner = credentials.getAddress();
 
         TransactionReceipt receipt = ownershipContract.addProperty(
-                ownerAddress,
+                initialOwner,
                 propertyAddress,
                 description
         ).send();
@@ -94,15 +95,27 @@ public class EthereumService {
         logger.info("OwnershipTransferred TX: {}", receipt.getTransactionHash());
     }
 
-    public void createEscrow(Long propertyId, String seller, String arbiter,
-                             BigInteger value, BigInteger releaseTime) throws Exception {
-        TransactionReceipt receipt = escrowContract.createEscrow(
+    public String deployNewEscrow(
+            String seller,
+            String arbiter,
+            Long propertyId,
+            BigInteger value,
+            BigInteger releaseTime
+    ) throws Exception {
+        // Deploy new escrow contract
+        PropertyEscrow escrow = PropertyEscrow.deploy(
+                web3j,
+                credentials,
+                new DefaultGasProvider(),
                 seller,
                 arbiter,
                 BigInteger.valueOf(propertyId),
                 releaseTime,
                 value
         ).send();
-        logger.info("EscrowCreated TX: {}", receipt.getTransactionHash());
+
+        String escrowAddress = escrow.getContractAddress();
+        logger.info("New Escrow deployed at: {}", escrowAddress);
+        return escrowAddress;
     }
 }
