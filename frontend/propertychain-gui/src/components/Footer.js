@@ -9,8 +9,8 @@ function Footer() {
             <i className="bi bi-geo-alt icon"></i>
             <div className="address">
               <h4>Address</h4>
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
+              <p>565 Paster Road</p>
+              <p>ThunderBay, P7B5V9</p>
               <p></p>
             </div>
           </div>
@@ -20,7 +20,7 @@ function Footer() {
             <div>
               <h4>Contact</h4>
               <p>
-                <strong>Phone:</strong> <span>+1 5589 55488 55</span><br />
+                <strong>Phone:</strong> <span>+1 8073558740</span><br />
                 <strong>Email:</strong> <span>info@example.com</span><br />
               </p>
             </div>
@@ -51,16 +51,9 @@ function Footer() {
 
       <div className="container copyright text-center mt-4">
         <p>
-          &copy; <span>Copyright</span> <strong className="px-1 sitename">EstateAgency</strong>{' '}
+          &copy; <span>Copyright</span> <strong className="px-1 sitename">PropertyChain</strong>{' '}
           <span>All Rights Reserved</span>
         </p>
-        <div className="credits">
-          {/* All the links in the footer should remain intact. */}
-          {/* You can delete the links only if you've purchased the pro version. */}
-          {/* Licensing information: https://bootstrapmade.com/license/ */}
-          {/* Purchase the pro version with working PHP/AJAX contact form: [buy-url] */}
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
       </div>
     </footer>
   );

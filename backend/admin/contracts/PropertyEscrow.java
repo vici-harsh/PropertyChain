@@ -92,9 +92,9 @@ public class PropertyEscrow extends Contract {
     }
 
     public static List<DisputeResolvedEventResponse> getDisputeResolvedEvents(TransactionReceipt transactionReceipt) {
-        List<Contract.EventValuesWithLog> valueList = staticExtractEventParametersWithLog(DISPUTERESOLVED_EVENT, transactionReceipt);
+        List<EventValuesWithLog> valueList = staticExtractEventParametersWithLog(DISPUTERESOLVED_EVENT, transactionReceipt);
         ArrayList<DisputeResolvedEventResponse> responses = new ArrayList<DisputeResolvedEventResponse>(valueList.size());
-        for (Contract.EventValuesWithLog eventValues : valueList) {
+        for (EventValuesWithLog eventValues : valueList) {
             DisputeResolvedEventResponse typedResponse = new DisputeResolvedEventResponse();
             typedResponse.log = eventValues.getLog();
             typedResponse.to = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -105,7 +105,7 @@ public class PropertyEscrow extends Contract {
     }
 
     public static DisputeResolvedEventResponse getDisputeResolvedEventFromLog(Log log) {
-        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(DISPUTERESOLVED_EVENT, log);
+        EventValuesWithLog eventValues = staticExtractEventParametersWithLog(DISPUTERESOLVED_EVENT, log);
         DisputeResolvedEventResponse typedResponse = new DisputeResolvedEventResponse();
         typedResponse.log = log;
         typedResponse.to = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -124,9 +124,9 @@ public class PropertyEscrow extends Contract {
     }
 
     public static List<FundsDepositedEventResponse> getFundsDepositedEvents(TransactionReceipt transactionReceipt) {
-        List<Contract.EventValuesWithLog> valueList = staticExtractEventParametersWithLog(FUNDSDEPOSITED_EVENT, transactionReceipt);
+        List<EventValuesWithLog> valueList = staticExtractEventParametersWithLog(FUNDSDEPOSITED_EVENT, transactionReceipt);
         ArrayList<FundsDepositedEventResponse> responses = new ArrayList<FundsDepositedEventResponse>(valueList.size());
-        for (Contract.EventValuesWithLog eventValues : valueList) {
+        for (EventValuesWithLog eventValues : valueList) {
             FundsDepositedEventResponse typedResponse = new FundsDepositedEventResponse();
             typedResponse.log = eventValues.getLog();
             typedResponse.buyer = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -137,7 +137,7 @@ public class PropertyEscrow extends Contract {
     }
 
     public static FundsDepositedEventResponse getFundsDepositedEventFromLog(Log log) {
-        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(FUNDSDEPOSITED_EVENT, log);
+        EventValuesWithLog eventValues = staticExtractEventParametersWithLog(FUNDSDEPOSITED_EVENT, log);
         FundsDepositedEventResponse typedResponse = new FundsDepositedEventResponse();
         typedResponse.log = log;
         typedResponse.buyer = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -156,9 +156,9 @@ public class PropertyEscrow extends Contract {
     }
 
     public static List<FundsReleasedEventResponse> getFundsReleasedEvents(TransactionReceipt transactionReceipt) {
-        List<Contract.EventValuesWithLog> valueList = staticExtractEventParametersWithLog(FUNDSRELEASED_EVENT, transactionReceipt);
+        List<EventValuesWithLog> valueList = staticExtractEventParametersWithLog(FUNDSRELEASED_EVENT, transactionReceipt);
         ArrayList<FundsReleasedEventResponse> responses = new ArrayList<FundsReleasedEventResponse>(valueList.size());
-        for (Contract.EventValuesWithLog eventValues : valueList) {
+        for (EventValuesWithLog eventValues : valueList) {
             FundsReleasedEventResponse typedResponse = new FundsReleasedEventResponse();
             typedResponse.log = eventValues.getLog();
             typedResponse.seller = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -169,7 +169,7 @@ public class PropertyEscrow extends Contract {
     }
 
     public static FundsReleasedEventResponse getFundsReleasedEventFromLog(Log log) {
-        Contract.EventValuesWithLog eventValues = staticExtractEventParametersWithLog(FUNDSRELEASED_EVENT, log);
+        EventValuesWithLog eventValues = staticExtractEventParametersWithLog(FUNDSRELEASED_EVENT, log);
         FundsReleasedEventResponse typedResponse = new FundsReleasedEventResponse();
         typedResponse.log = log;
         typedResponse.seller = (String) eventValues.getNonIndexedValues().get(0).getValue();
@@ -248,7 +248,7 @@ public class PropertyEscrow extends Contract {
     public RemoteFunctionCall<TransactionReceipt> resolveDispute(String _to) {
         final Function function = new Function(
                 FUNC_RESOLVEDISPUTE, 
-                Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _to)), 
+                Arrays.<Type>asList(new Address(160, _to)),
                 Collections.<TypeReference<?>>emptyList());
         return executeRemoteCallTransaction(function);
     }
@@ -279,36 +279,36 @@ public class PropertyEscrow extends Contract {
     }
 
     public static RemoteCall<PropertyEscrow> deploy(Web3j web3j, Credentials credentials, ContractGasProvider contractGasProvider, BigInteger initialWeiValue, String _seller, String _arbiter, BigInteger _propertyId, BigInteger _releaseTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _seller), 
-                new org.web3j.abi.datatypes.Address(160, _arbiter), 
-                new org.web3j.abi.datatypes.generated.Uint256(_propertyId), 
-                new org.web3j.abi.datatypes.generated.Uint256(_releaseTime)));
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new Address(160, _seller),
+                new Address(160, _arbiter),
+                new Uint256(_propertyId),
+                new Uint256(_releaseTime)));
         return deployRemoteCall(PropertyEscrow.class, web3j, credentials, contractGasProvider, BINARY, encodedConstructor, initialWeiValue);
     }
 
     public static RemoteCall<PropertyEscrow> deploy(Web3j web3j, TransactionManager transactionManager, ContractGasProvider contractGasProvider, BigInteger initialWeiValue, String _seller, String _arbiter, BigInteger _propertyId, BigInteger _releaseTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _seller), 
-                new org.web3j.abi.datatypes.Address(160, _arbiter), 
-                new org.web3j.abi.datatypes.generated.Uint256(_propertyId), 
-                new org.web3j.abi.datatypes.generated.Uint256(_releaseTime)));
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new Address(160, _seller),
+                new Address(160, _arbiter),
+                new Uint256(_propertyId),
+                new Uint256(_releaseTime)));
         return deployRemoteCall(PropertyEscrow.class, web3j, transactionManager, contractGasProvider, BINARY, encodedConstructor, initialWeiValue);
     }
 
     @Deprecated
     public static RemoteCall<PropertyEscrow> deploy(Web3j web3j, Credentials credentials, BigInteger gasPrice, BigInteger gasLimit, BigInteger initialWeiValue, String _seller, String _arbiter, BigInteger _propertyId, BigInteger _releaseTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _seller), 
-                new org.web3j.abi.datatypes.Address(160, _arbiter), 
-                new org.web3j.abi.datatypes.generated.Uint256(_propertyId), 
-                new org.web3j.abi.datatypes.generated.Uint256(_releaseTime)));
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new Address(160, _seller),
+                new Address(160, _arbiter),
+                new Uint256(_propertyId),
+                new Uint256(_releaseTime)));
         return deployRemoteCall(PropertyEscrow.class, web3j, credentials, gasPrice, gasLimit, BINARY, encodedConstructor, initialWeiValue);
     }
 
     @Deprecated
     public static RemoteCall<PropertyEscrow> deploy(Web3j web3j, TransactionManager transactionManager, BigInteger gasPrice, BigInteger gasLimit, BigInteger initialWeiValue, String _seller, String _arbiter, BigInteger _propertyId, BigInteger _releaseTime) {
-        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new org.web3j.abi.datatypes.Address(160, _seller), 
-                new org.web3j.abi.datatypes.Address(160, _arbiter), 
-                new org.web3j.abi.datatypes.generated.Uint256(_propertyId), 
-                new org.web3j.abi.datatypes.generated.Uint256(_releaseTime)));
+        String encodedConstructor = FunctionEncoder.encodeConstructor(Arrays.<Type>asList(new Address(160, _seller),
+                new Address(160, _arbiter),
+                new Uint256(_propertyId),
+                new Uint256(_releaseTime)));
         return deployRemoteCall(PropertyEscrow.class, web3j, transactionManager, gasPrice, gasLimit, BINARY, encodedConstructor, initialWeiValue);
     }
 

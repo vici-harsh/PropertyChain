@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header({ account }) {
   const mobileNavToggleBtn = useRef(null);
   const scrollTop = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const toggleMobileNav = () => {
@@ -13,7 +14,6 @@ function Header({ account }) {
         mobileNavToggleBtn.current.classList.toggle('bi-x');
       }
     };
-
     const toggleScrollTop = () => {
       if (scrollTop.current) {
         window.scrollY > 100
@@ -21,19 +21,12 @@ function Header({ account }) {
           : scrollTop.current.classList.remove('active');
       }
     };
-
     const mobileBtn = mobileNavToggleBtn.current;
-    if (mobileBtn) {
-      mobileBtn.addEventListener('click', toggleMobileNav);
-    }
-
+    mobileBtn?.addEventListener('click', toggleMobileNav);
     window.addEventListener('load', toggleScrollTop);
     window.addEventListener('scroll', toggleScrollTop);
-
     return () => {
-      if (mobileBtn) {
-        mobileBtn.removeEventListener('click', toggleMobileNav);
-      }
+      mobileBtn?.removeEventListener('click', toggleMobileNav);
       window.removeEventListener('load', toggleScrollTop);
       window.removeEventListener('scroll', toggleScrollTop);
     };
@@ -44,35 +37,35 @@ function Header({ account }) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const goToMyProps = () => navigate('/properties');
+
+  const acct = account || localStorage.getItem('current_eth_account') || '';
+
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">
       <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-        <a href="/" className="logo d-flex align-items-center">
-          {/* Uncomment below if using an image logo */}
-          {/* <img src="/assets/img/logo.png" alt="Logo" /> */}
-          <h1 className="sitename">
-            Estate<span>Agency</span>
-          </h1>
-        </a>
+        <Link to="/" className="logo d-flex align-items-center">
+          <h1 className="sitename">Property<span>Chain</span></h1>
+        </Link>
+
         <nav id="navbar" className="navmenu">
           <ul>
             <li><Link className="nav-link" to="/">Home</Link></li>
             <li><Link className="nav-link" to="/services">Services</Link></li>
             <li><Link className="nav-link" to="/properties">Properties</Link></li>
             <li><Link className="nav-link" to="/add-property">Add Property</Link></li>
-            <li><Link className="nav-link" to="/transfer/:id">Transfer</Link></li>
-            <li><Link className="nav-link" to="/escrow/:id">Escrow</Link></li>
-            <li><Link className="nav-link" to="/history/:id">History</Link></li>
           </ul>
-          <i
-            ref={mobileNavToggleBtn}
-            className="mobile-nav-toggle d-xl-none bi bi-list"
-          ></i>
+          <i ref={mobileNavToggleBtn} className="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
+        <button className="btn btn-sm btn-outline-primary me-2" onClick={goToMyProps}>
+          My Properties
+        </button>
         <span className="small text-muted">
-          Account: {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Not Connected'}
+          Account: {acct ? `${acct.slice(0, 6)}...${acct.slice(-4)}` : 'Not Connected'}
         </span>
       </div>
+
       <a
         ref={scrollTop}
         onClick={handleScrollTop}

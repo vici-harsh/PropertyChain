@@ -1,30 +1,39 @@
+server:
+  port: 8080
+
 spring:
-  redis:
-    host: localhost
-    port: 6379
-    timeout: 60000
-
+  application:
+    name: propertychain-backend
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
   kafka:
-    bootstrap-servers: localhost:9092
-    consumer:
-      group-id: propertychain-group
-      auto-offset-reset: earliest
+    bootstrap-servers: ${KAFKA_SERVERS:localhost:9092}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    admin:
+      fail-fast: true
 
-  web:
-    resources:
-      static-locations: classpath:/static/
+# dev basic auth (front-end can set REACT_APP_BASIC_AUTH to match this)
+spring.security.user:
+  name: ${ADMIN_USER:admin}
+  password: ${ADMIN_PASS:change_me}
 
-ethereum:
-  node-url: http://localhost:8545
-  ownership-contract-address: ${OWNERSHIP_CONTRACT_ADDRESS}
-  escrow-contract-address: ${ESCROW_CONTRACT_ADDRESS}
-  private-key: ${PRIVATE_KEY}
-
-logging:
-  level:
-    org.springframework: INFO
-    com.propertychain: DEBUG
-  file:
-    name: logs/propertychain.log
-    pattern:
-      file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+app:
+  cors:
+    allowed-origins: ${CORS_ORIGINS:http://localhost:3000}
+  kafka:
+    topic: ${KAFKA_TOPIC:property-events}
+  ethereum:
+#    enabled: ${ETH_ENABLED:true}
+    node-url: ${ETH_NODE_URL:http://127.0.0.1:7545}
+    chain-id: ${ETH_CHAIN_ID:1337}
+    signer-private-key: ${ETH_SIGNER_PK:0x0000000000000000000000000000000000000000000000000000000000000000}
+    # optional: known contracts if you have them deployed
+    ownership-contract-address: ${OWNERSHIP_CONTRACT:}
+    escrow-factory-address: ${ESCROW_FACTORY_CONTRACT:}

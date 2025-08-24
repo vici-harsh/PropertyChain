@@ -1,0 +1,1210 @@
+[2025/08/23 22:43:25.397] - Starting server with initial configuration: {"gasLimit":6721975,"gasPrice":20000000000,"hardfork":"merge","hostname":"127.0.0.1","port":7545,"network_id":5777,"default_balance_ether":100,"total_accounts":10,"unlocked_accounts":[],"locked":false,"vmErrorsOnRPCResponse":true,"verbose":true,"flavor":"ethereum","db_path":"C:\\Users\\LENOVO\\AppData\\Roaming\\Ganache\\ui\\workspaces\\PropertyChain\\chaindata","mnemonic":"test test test test test test test test test test test junk","logDirectory":"E:\\Lakehead\\BlockChain\\Final_Project\\PropertyChain\\backend\\admin"}
+[2025/08/23 22:43:25.621] -    >  eth_getCode: [
+   >   "0xb7f8bc63bbcad18155201308c8f3540b07f84f5e",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.623] -    >  eth_subscribe: [
+   >   "newHeads"
+   > ]
+[2025/08/23 22:43:25.624] -    >  eth_getLogs: [
+   >   {
+   >     "fromBlock": null,
+   >     "topics": []
+   >   }
+   > ]
+[2025/08/23 22:43:25.624] -    >  eth_subscribe: [
+   >   "logs",
+   >   {
+   >     "topics": []
+   >   }
+   > ]
+[2025/08/23 22:43:25.636] -    >  eth_getCode: [
+   >   "0x8a791620dd6260079bf849dc5567adc3f2fdc318",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.698] -    >  eth_subscribe: [
+   >   "newHeads"
+   > ]
+[2025/08/23 22:43:25.700] -    >  eth_getLogs: [
+   >   {
+   >     "fromBlock": null,
+   >     "topics": []
+   >   }
+   > ]
+[2025/08/23 22:43:25.700] -    >  eth_subscribe: [
+   >   "logs",
+   >   {
+   >     "topics": []
+   >   }
+   > ]
+[2025/08/23 22:43:25.775] -    >  eth_blockNumber: []
+[2025/08/23 22:43:25.776] -    >  eth_accounts: []
+[2025/08/23 22:43:25.777] -    >  eth_gasPrice: []
+[2025/08/23 22:43:25.778] -    >  eth_getBlockByNumber: [
+   >   "latest",
+   >   false
+   > ]
+[2025/08/23 22:43:25.778] -    >  eth_subscribe: [
+   >   "newHeads"
+   > ]
+[2025/08/23 22:43:25.781] -    >  eth_blockNumber: []
+[2025/08/23 22:43:25.782] -    >  eth_accounts: []
+[2025/08/23 22:43:25.782] -    >  eth_gasPrice: []
+[2025/08/23 22:43:25.783] -    >  eth_getBlockByNumber: [
+   >   "latest",
+   >   false
+   > ]
+[2025/08/23 22:43:25.784] -    >  eth_subscribe: [
+   >   "newHeads"
+   > ]
+[2025/08/23 22:43:25.806] -    >  eth_accounts: []
+[2025/08/23 22:43:25.865] -    >  eth_getBalance: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.870] -    >  eth_getTransactionCount: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.878] -    >  eth_getBalance: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.884] -    >  eth_getTransactionCount: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.889] -    >  eth_getBalance: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.895] -    >  eth_getTransactionCount: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.901] -    >  eth_getBalance: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.906] -    >  eth_getTransactionCount: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.916] -    >  eth_getBalance: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.924] -    >  eth_getTransactionCount: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.930] -    >  eth_getBalance: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.936] -    >  eth_getTransactionCount: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.940] -    >  eth_getBalance: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.945] -    >  eth_getTransactionCount: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.953] -    >  eth_getBalance: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.959] -    >  eth_getTransactionCount: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.963] -    >  eth_getBalance: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.969] -    >  eth_getTransactionCount: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.973] -    >  eth_getBalance: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.977] -    >  eth_getTransactionCount: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:25.993] -    >  eth_getBalance: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.001] -    >  eth_getTransactionCount: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.010] -    >  eth_getBalance: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.018] -    >  eth_getTransactionCount: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.023] -    >  eth_getBalance: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.028] -    >  eth_getTransactionCount: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.035] -    >  eth_getBalance: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.040] -    >  eth_getTransactionCount: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.044] -    >  eth_getBalance: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.049] -    >  eth_getTransactionCount: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.054] -    >  eth_getBalance: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.059] -    >  eth_getTransactionCount: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.063] -    >  eth_getBalance: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.069] -    >  eth_getTransactionCount: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.073] -    >  eth_getBalance: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.078] -    >  eth_getTransactionCount: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.084] -    >  eth_getBalance: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.088] -    >  eth_getTransactionCount: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.094] -    >  eth_getBalance: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.100] -    >  eth_getTransactionCount: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.104] -    >  eth_getBalance: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.108] -    >  eth_getTransactionCount: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.112] -    >  eth_getBalance: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.117] -    >  eth_getTransactionCount: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.122] -    >  eth_getBalance: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.126] -    >  eth_getTransactionCount: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.132] -    >  eth_getBalance: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.137] -    >  eth_getTransactionCount: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.144] -    >  eth_getBalance: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.154] -    >  eth_getTransactionCount: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.159] -    >  eth_getBalance: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.164] -    >  eth_getTransactionCount: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.171] -    >  eth_getBalance: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.176] -    >  eth_getTransactionCount: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.183] -    >  eth_getBalance: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.188] -    >  eth_getTransactionCount: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.192] -    >  eth_getBalance: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.197] -    >  eth_getTransactionCount: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.202] -    >  eth_getBalance: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.208] -    >  eth_getTransactionCount: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.328] -    >  eth_getTransactionCount: [
+   >   "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.332] -    >  eth_getBalance: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.336] -    >  eth_getTransactionCount: [
+   >   "0x70997970c51812dc3a010c7d01b50e0d17dc79c8",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.340] -    >  eth_getBalance: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.351] -    >  eth_getTransactionCount: [
+   >   "0x3c44cdddb6a900fa2b585dd299e03d12fa4293bc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.364] -    >  eth_getBalance: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.376] -    >  eth_getTransactionCount: [
+   >   "0x90f79bf6eb2c4f870365e785982e1f101e93b906",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.393] -    >  eth_getBalance: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.402] -    >  eth_getTransactionCount: [
+   >   "0x15d34aaf54267db7d7c367839aaf71a00a2c6a65",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.407] -    >  eth_getBalance: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.414] -    >  eth_getTransactionCount: [
+   >   "0x9965507d1a55bcc2695c58ba16fb37d819b0a4dc",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.420] -    >  eth_getBalance: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.424] -    >  eth_getTransactionCount: [
+   >   "0x976ea74026e726554db657fa54763abd0c3a0aa9",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.428] -    >  eth_getBalance: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.433] -    >  eth_getTransactionCount: [
+   >   "0x14dc79964da2c08b23698b3d3cc7ca32193d9955",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.440] -    >  eth_getBalance: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.444] -    >  eth_getTransactionCount: [
+   >   "0x23618e81e3f5cdf7f54c3d65f7fbc0abf5b21e8f",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.449] -    >  eth_getBalance: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:26.454] -    >  eth_getTransactionCount: [
+   >   "0xa0ee7a142d267c1f36714e4a8f75612f20a79720",
+   >   "latest"
+   > ]
+[2025/08/23 22:43:27.083] -    >  eth_getFilterChanges: [
+   >   "0xd"
+   > ]
+[2025/08/23 22:43:27.109] -    >  eth_newFilter: [
+   >   {
+   >     "topics": [
+   >       "0x16b85f49bf01212961345d3016c9a531894accf62eb7680f2045d79185cc0ec0"
+   >     ],
+   >     "fromBlock": "latest",
+   >     "toBlock": "latest",
+   >     "address": [
+   >       "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318"
+   >     ]
+   >   }
+   > ]
+[2025/08/23 22:43:27.115] -    >  eth_getFilterLogs: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:43:27.118] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:43:42.127] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:43:46.150] -    >  eth_getBlockByNumber: [
+   >   "0xa",
+   >   true
+   > ]
+[2025/08/23 22:43:46.177] -    >  eth_getTransactionReceipt: [
+   >   "0xc3e5c9991d33d0ab45759389eff118e0e4e273a4f05f3482874a1f17f887af04"
+   > ]
+[2025/08/23 22:43:46.199] -    >  eth_getBlockByNumber: [
+   >   "0x9",
+   >   true
+   > ]
+[2025/08/23 22:43:46.215] -    >  eth_getTransactionReceipt: [
+   >   "0xf1e7025d50b2963207afa5a36c76d3e12ae560ffb012f0eb5115891e8b779319"
+   > ]
+[2025/08/23 22:43:46.229] -    >  eth_getBlockByNumber: [
+   >   "0x8",
+   >   true
+   > ]
+[2025/08/23 22:43:46.242] -    >  eth_getTransactionReceipt: [
+   >   "0xce546e732d810db162711fa88a20a606da824771f23b9d929710cb1bbeab9605"
+   > ]
+[2025/08/23 22:43:46.257] -    >  eth_getBlockByNumber: [
+   >   "0x7",
+   >   true
+   > ]
+[2025/08/23 22:43:46.270] -    >  eth_getTransactionReceipt: [
+   >   "0x06fb73e4f0fef81c45427a5a117b7d833c998ce6b07d1860e7c249d75ddc9da1"
+   > ]
+[2025/08/23 22:43:46.286] -    >  eth_getBlockByNumber: [
+   >   "0x6",
+   >   true
+   > ]
+[2025/08/23 22:43:46.300] -    >  eth_getTransactionReceipt: [
+   >   "0xbe6d66df1a0b42e3f5c7c56fb6ea672affa132121f83babe607a3de64a2dbd89"
+   > ]
+[2025/08/23 22:43:46.316] -    >  eth_getBlockByNumber: [
+   >   "0x5",
+   >   true
+   > ]
+[2025/08/23 22:43:46.331] -    >  eth_getTransactionReceipt: [
+   >   "0xf1251b1c7ab087b744a267ae469a0cf67a57685287675289bd3f661fc873b569"
+   > ]
+[2025/08/23 22:43:46.346] -    >  eth_getBlockByNumber: [
+   >   "0x4",
+   >   true
+   > ]
+[2025/08/23 22:43:46.366] -    >  eth_getTransactionReceipt: [
+   >   "0x3fcc7811ac57c9159c4df00be8823c1ca7ae494ed57809557fe22f6175f0eda7"
+   > ]
+[2025/08/23 22:43:46.380] -    >  eth_getBlockByNumber: [
+   >   "0x3",
+   >   true
+   > ]
+[2025/08/23 22:43:46.396] -    >  eth_getTransactionReceipt: [
+   >   "0x5aa15946099dd12458a08cce56950d713d37ce1f11e1d3949cb26e9ba6c9dacc"
+   > ]
+[2025/08/23 22:43:46.410] -    >  eth_getBlockByNumber: [
+   >   "0x2",
+   >   true
+   > ]
+[2025/08/23 22:43:46.424] -    >  eth_getTransactionReceipt: [
+   >   "0x309109afc7af2e99b8510f39a7081efedea94937dc349903513dcf9bb9f22e42"
+   > ]
+[2025/08/23 22:43:46.437] -    >  eth_getBlockByNumber: [
+   >   "0x1",
+   >   true
+   > ]
+[2025/08/23 22:43:46.449] -    >  eth_getTransactionReceipt: [
+   >   "0x9a69e05fe2db074c9619478384ddf2d33f698ff259604ff764865590fb14219f"
+   > ]
+[2025/08/23 22:43:46.465] -    >  eth_getBlockByNumber: [
+   >   "0x0",
+   >   true
+   > ]
+[2025/08/23 22:43:57.133] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:44:12.126] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:44:27.138] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:44:42.129] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:44:57.135] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:45:12.125] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:45:27.137] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:45:42.148] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:45:57.135] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:46:12.134] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:46:27.135] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:46:42.144] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:46:57.153] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:47:12.148] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:47:27.141] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:47:42.152] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:47:57.149] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:48:12.148] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:48:27.148] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:48:42.158] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:48:57.157] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:49:12.157] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:49:27.158] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:49:42.157] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:49:57.174] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:50:12.173] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:50:27.165] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:50:42.172] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:50:57.170] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:51:12.175] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:51:27.178] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:51:42.181] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:51:57.178] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:52:12.183] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:52:18.138] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000006"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 22:52:18.205] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000002"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 22:52:18.217] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000005"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 22:52:18.225] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000004"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 22:52:18.236] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000003"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 22:52:27.181] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:52:42.179] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:52:57.186] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:53:12.173] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:53:27.181] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:53:42.183] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:53:57.186] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:54:12.187] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:54:27.199] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:54:42.189] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:54:57.199] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:55:12.199] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:55:27.189] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:55:42.199] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:55:57.206] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:56:12.209] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:56:27.194] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:56:42.196] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:56:57.217] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:57:12.217] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:57:27.207] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:57:42.202] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:57:57.205] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:58:12.216] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:58:27.221] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:58:42.217] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:58:57.224] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:59:12.228] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:59:27.216] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:59:42.229] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 22:59:57.216] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:00:12.220] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:00:27.225] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:00:42.233] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:00:57.236] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:01:12.224] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:01:27.234] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:01:42.227] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:01:57.227] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:02:12.229] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:02:27.243] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:02:42.244] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:02:57.235] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:03:12.230] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:03:27.238] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:03:42.239] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:03:57.246] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:04:12.247] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:04:27.238] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:04:42.246] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:04:57.240] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:05:12.255] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:05:27.252] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:05:42.257] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:05:57.258] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:06:12.254] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:06:27.244] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:06:42.262] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:06:57.247] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:07:12.248] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:07:27.249] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:07:42.256] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:07:57.259] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:08:12.254] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:08:27.267] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:08:42.263] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:08:57.256] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:09:12.267] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:09:27.261] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:09:42.267] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:09:57.263] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:10:12.259] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:10:27.272] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:10:42.267] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:10:57.266] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:11:12.279] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:11:27.283] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:11:42.281] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:11:57.271] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:12:12.270] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:12:27.270] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:12:42.287] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:12:57.290] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:13:12.284] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:13:27.288] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:13:42.287] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:13:57.294] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:14:12.282] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:14:27.285] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:14:42.282] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:14:57.289] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:15:12.293] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:15:27.288] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:15:42.294] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:15:57.303] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:16:12.289] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:16:27.296] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:16:42.299] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:16:57.296] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:17:12.307] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:17:27.295] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:17:42.296] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:17:57.301] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:18:12.296] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:18:27.311] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:18:42.305] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:18:57.305] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:19:12.301] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:19:27.301] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:19:42.310] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:19:57.315] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:20:12.306] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:20:27.316] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:20:42.307] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:20:57.313] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:21:12.309] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:21:27.308] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:21:42.320] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:21:57.321] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:22:12.323] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:22:27.323] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:22:42.315] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:22:57.320] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:23:12.317] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:23:27.326] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:23:28.457] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000006"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:28.469] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000002"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:28.478] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000005"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:28.486] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000004"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:28.494] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000003"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:40.908] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000006"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:40.917] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000002"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:40.928] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000005"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:40.936] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000004"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:40.941] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000003"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:42.313] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:23:43.722] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000006"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:43.729] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000002"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:43.735] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000005"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:43.740] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000004"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:43.747] -    >  eth_call: [
+   >   {
+   >     "from": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+   >     "to": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+   >     "data": "0x7ace341b0000000000000000000000000000000000000000000000000000000000000003"
+   >   },
+   >   "latest"
+   > ]
+[2025/08/23 23:23:57.317] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:24:12.330] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:24:27.319] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:24:42.324] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:24:57.328] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:25:12.325] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:25:27.332] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:25:42.333] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:25:57.320] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:26:12.328] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:26:27.331] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:26:42.329] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:26:57.339] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:27:12.333] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:27:27.324] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:27:42.333] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:27:57.329] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:28:12.330] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:28:27.339] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:28:42.336] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:28:57.337] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:29:12.332] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:29:27.343] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:29:42.345] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:29:57.336] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:30:12.336] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:30:27.336] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:30:42.334] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:30:57.346] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/23 23:31:12.351] -    >  eth_getFilterChanges: [
+   >   "0x7"
+   > ]
+[2025/08/24 01:25:16.953] -    >  eth_unsubscribe: [
+   >   "0x3"
+   > ]
+[2025/08/24 01:25:16.958] -    >  eth_unsubscribe: [
+   >   "0x4"
+   > ]

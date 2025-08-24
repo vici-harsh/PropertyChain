@@ -1,155 +1,51 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.5'
-    id 'io.spring.dependency-management' version '1.1.7'
-    id 'com.google.protobuf' version '0.9.4'
-    id 'application'
+    id 'org.springframework.boot' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.5'
 }
 
-
-
+group = 'com.propertychain'
+version = '0.0.1-SNAPSHOT'
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17) // Java 21 LTS recommended
-    }
+    toolchain { languageVersion = JavaLanguageVersion.of(17) }
 }
 
-repositories {
-    mavenCentral()
-}
-
-ext {
-    set('springAiVersion', "1.0.1")
-    set('springCloudVersion', "2025.0.0")
-    set('springGrpcVersion', "0.10.0")
-    set('springModulithVersion', "1.4.1")
-    set('web3jVersion', "4.9.7")
-}
+repositories { mavenCentral() }
 
 dependencies {
-    implementation 'redis.clients:jedis:4.4.6'
 
-    // Core Spring Boot
+    implementation 'me.paulschwarz:spring-dotenv:4.0.0'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-    // Redis (main persistence + session store)
+    // Security (dev basic)
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Redis
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.session:spring-session-data-redis'
 
-    // Kafka (event streaming)
+    // Kafka
     implementation 'org.springframework.kafka:spring-kafka'
-    implementation 'org.apache.kafka:kafka-streams'
-    implementation 'org.springframework.integration:spring-integration-kafka'
 
-    // Ethereum (Web3j core libs)
-    implementation "org.web3j:core:${web3jVersion}"
-    implementation "org.web3j:codegen:${web3jVersion}"
-    implementation "org.web3j:crypto:${web3jVersion}"
-    implementation "org.web3j:utils:${web3jVersion}"
+    // Web3j (optional)
+    implementation 'org.web3j:core:4.10.3'
 
-    // Optional: Integration pieces
-    implementation 'org.springframework.integration:spring-integration-redis'
-    implementation 'org.springframework.integration:spring-integration-http'
-    implementation 'org.springframework.integration:spring-integration-webflux'
+    // JSON
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
 
-    // Dev tools
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    // Lombok (optional; if you prefer, remove and write boilerplate)
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 
-    // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.kafka:spring-kafka-test'
-    testImplementation 'org.springframework.security:spring-security-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-
-    // Dotenv (to load .env files)
-    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
-
-    implementation 'jakarta.validation:jakarta.validation-api:3.0.2'
-    implementation 'org.hibernate.validator:hibernate-validator:7.0.5.Final'
-
 }
 
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.modulith:spring-modulith-bom:${springModulithVersion}"
-        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
-        mavenBom "org.springframework.grpc:spring-grpc-dependencies:${springGrpcVersion}"
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-    }
+tasks.withType(Test).configureEach {
+    enabled = false
 }
-
-protobuf {
-    protoc {
-        artifact = 'com.google.protobuf:protoc:3.25.3'
-    }
-    plugins {
-        grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.63.0'
-        }
-    }
-    generateProtoTasks {
-        all()*.plugins {
-            grpc {
-                option '@generated=omit'
-            }
-        }
-    }
-}
-
-tasks.named('bootBuildImage') {
-    runImage = 'paketobuildpacks/ubuntu-noble-run-base:latest'
-}
-
-task generateContractWrappers(type: JavaExec) {
-    group = "web3j"
-    description = "Generates Java contract wrappers from Solidity artifacts"
-    mainClass = 'org.web3j.codegen.SolidityFunctionWrapperGenerator'
-    classpath = sourceSets.main.runtimeClasspath
-    args = [
-            '-a', 'src/main/resources/contracts/PropertyEscrow.abi',
-            '-b', 'src/main/resources/contracts/PropertyEscrow.bin',
-            '-o', 'src/main/java',
-            '-p', 'com.propertychain.admin.contracts'
-    ]
-}
-
-task generateOwnershipWrappers(type: JavaExec) {
-    group = "web3j"
-    description = "Generates Java contract wrappers from PropertyOwnership Solidity artifacts"
-    mainClass = 'org.web3j.codegen.SolidityFunctionWrapperGenerator'
-    classpath = sourceSets.main.runtimeClasspath
-    args = [
-            '-a', 'src/main/resources/contracts/PropertyOwnership.abi',
-            '-b', 'src/main/resources/contracts/PropertyOwnership.bin',
-            '-o', 'src/main/java',
-            '-p', 'com.propertychain.admin.contracts'
-    ]
-}
-
-tasks.named('test') {
-    useJUnitPlatform()
-}
-
-application {
-    mainClass = 'com.propertychain.admin.AdminApplication'
-}
-
-bootJar {
-    mainClass = 'com.propertychain.admin.AdminApplication'
-}
-
-bootRun {
-    mainClass = 'com.propertychain.admin.AdminApplication'
-}
-
-sourceSets {
-    main {
-        resources {
-            srcDir {
-                "src/main/resources/contracts"
-            }
-        }
-    }
-}
+//
+//tasks.named('test') { useJUnitPlatform() }

@@ -1,27 +1,1667 @@
-2025-08-23T18:09:07.410-04:00  INFO 27548 --- [admin] [restartedMain] c.propertychain.admin.AdminApplication   : Starting AdminApplication using Java 17.0.8 with PID 27548 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
-2025-08-23T18:09:07.413-04:00 DEBUG 27548 --- [admin] [restartedMain] c.propertychain.admin.AdminApplication   : Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-08-23T18:09:07.414-04:00  INFO 27548 --- [admin] [restartedMain] c.propertychain.admin.AdminApplication   : No active profile set, falling back to 1 default profile: "default"
-2025-08-23T18:09:07.505-04:00  INFO 27548 --- [admin] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-08-23T18:09:07.506-04:00  INFO 27548 --- [admin] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-08-23T18:09:09.059-04:00  INFO 27548 --- [admin] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-08-23T18:09:09.064-04:00  INFO 27548 --- [admin] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2025-08-23T18:09:09.120-04:00  INFO 27548 --- [admin] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
-2025-08-23T18:09:09.402-04:00  INFO 27548 --- [admin] [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2025-08-23T18:09:09.428-04:00  INFO 27548 --- [admin] [restartedMain] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2025-08-23T18:09:10.455-04:00  INFO 27548 --- [admin] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-08-23T18:09:10.473-04:00  INFO 27548 --- [admin] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-23T18:09:10.474-04:00  INFO 27548 --- [admin] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-08-23T18:09:10.570-04:00  INFO 27548 --- [admin] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-23T18:09:10.571-04:00  INFO 27548 --- [admin] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3065 ms
-2025-08-23T18:09:11.821-04:00  INFO 27548 --- [admin] [restartedMain] c.p.admin.service.EthereumService        : Loaded ownership contract at: 0x8A791620dd6260079BF849Dc5567aDC3F2FdC318 with owner 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
-2025-08-23T18:09:11.890-04:00  INFO 27548 --- [admin] [restartedMain] c.p.admin.service.EthereumService        : Loaded escrow contract at: 0xB7f8BC63BbcaD18155201308C8f3540b07f84F5e with buyer 0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
-2025-08-23T18:09:12.659-04:00  INFO 27548 --- [admin] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5a4d291e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f73c928, org.springframework.security.web.context.SecurityContextHolderFilter@793611ee, org.springframework.security.web.header.HeaderWriterFilter@49ff7fc8, org.springframework.web.filter.CorsFilter@454c2683, org.springframework.security.web.authentication.logout.LogoutFilter@6e02d408, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@795b981f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@72c8383e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b290eda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@9a9b931, org.springframework.security.web.session.SessionManagementFilter@12d28ff3, org.springframework.security.web.access.ExceptionTranslationFilter@1035c597, org.springframework.security.web.access.intercept.AuthorizationFilter@1af32f0b]
-2025-08-23T18:09:13.586-04:00  INFO 27548 --- [admin] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-23T18:09:13.756-04:00  INFO 27548 --- [admin] [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2025-08-23T18:09:13.757-04:00  INFO 27548 --- [admin] [restartedMain] o.s.i.channel.PublishSubscribeChannel    : Channel 'admin.errorChannel' has 1 subscriber(s).
-2025-08-23T18:09:13.758-04:00  INFO 27548 --- [admin] [restartedMain] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2025-08-23T18:09:13.801-04:00  INFO 27548 --- [admin] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-08-23T18:09:13.822-04:00  INFO 27548 --- [admin] [restartedMain] c.propertychain.admin.AdminApplication   : Started AdminApplication in 7.2 seconds (process running for 7.984)
-2025-08-23T18:10:36.862-04:00  INFO 27548 --- [admin] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-23T18:10:36.862-04:00  INFO 27548 --- [admin] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-23T18:10:36.863-04:00  INFO 27548 --- [admin] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-08-24 17:38:24 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 23796 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 17:38:24 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 17:38:24 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 17:38:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 17:38:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 17:38:26 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-08-24 17:38:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 17:38:27 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 17:38:27 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 17:38:27 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 17:38:27 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2670 ms
+2025-08-24 17:38:29 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 17:38:29 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 17:38:29 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 17:38:29 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 17:38:29 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 17:38:29 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 17:38:29 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 17:38:29 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 17:38:30 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 17:38:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 17:38:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 17:38:30 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756071510494
+2025-08-24 17:38:31 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 17:38:31 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 17:38:31 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 17:38:31 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 17:38:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 17:38:31 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.245 seconds (process running for 7.785)
+2025-08-24 17:39:51 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 17:39:51 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 17:39:51 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 17:39:52 [http-nio-8080-exec-2] INFO  c.p.admin.service.EthereumService - addProperty tx=0x6c089488a9100ab714946c29c26fe99a13f5d1d7bb7da3565ee4bf7e4fe75f57
+2025-08-24 17:39:52 [http-nio-8080-exec-2] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-08-24 17:39:52 [http-nio-8080-exec-2] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-08-24 17:39:52 [http-nio-8080-exec-2] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=admin-producer-1] Instantiated an idempotent producer.
+2025-08-24 17:39:53 [http-nio-8080-exec-2] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 17:39:53 [http-nio-8080-exec-2] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 17:39:53 [http-nio-8080-exec-2] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756071593030
+2025-08-24 17:39:53 [kafka-producer-network-thread | admin-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=admin-producer-1] Cluster ID: KlH5wHnCTxyFzpcxKxEFsA
+2025-08-24 17:39:53 [kafka-producer-network-thread | admin-producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=admin-producer-1] ProducerId set to 1 with epoch 0
+2025-08-24 17:39:53 [http-nio-8080-exec-2] INFO  c.p.admin.service.PropertyService - Property added id=7 address='110 115 TOIVO ST' owner=0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+2025-08-24 17:45:41 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 5648 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 17:45:41 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 17:45:41 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 17:45:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 17:45:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 17:45:43 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2025-08-24 17:45:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 17:45:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 17:45:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 17:45:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 17:45:44 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2777 ms
+2025-08-24 17:45:45 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 17:45:45 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 17:45:45 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 17:45:45 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 17:45:45 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 17:45:45 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 17:45:46 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 17:45:46 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 17:45:47 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 17:45:47 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 17:45:47 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 17:45:47 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756071947271
+2025-08-24 17:45:47 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 17:45:47 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 17:45:47 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 17:45:47 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 17:45:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 17:45:47 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.179 seconds (process running for 7.753)
+2025-08-24 17:46:32 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 17:46:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 17:46:32 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 17:48:02 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 23680 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 17:48:02 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 17:48:02 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 17:48:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 17:48:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 17:48:04 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2025-08-24 17:48:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 17:48:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 17:48:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 17:48:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 17:48:05 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2727 ms
+2025-08-24 17:48:07 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 17:48:07 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 17:48:07 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 17:48:07 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 17:48:07 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 17:48:07 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 17:48:07 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 17:48:07 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 17:48:08 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 17:48:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 17:48:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 17:48:08 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756072088630
+2025-08-24 17:48:09 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 17:48:09 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 17:48:09 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 17:48:09 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 17:48:09 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 17:48:09 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.139 seconds (process running for 7.688)
+2025-08-24 17:48:26 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 17:48:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 17:48:26 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-24 17:50:32 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 19800 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 17:50:32 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 17:50:32 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 17:50:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 17:50:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 17:50:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2025-08-24 17:50:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 17:50:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 17:50:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 17:50:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 17:50:35 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2663 ms
+2025-08-24 17:50:36 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 17:50:36 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 17:50:36 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 17:50:36 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 17:50:36 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 17:50:36 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 17:50:37 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 17:50:37 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 17:50:38 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 17:50:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 17:50:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 17:50:38 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756072238359
+2025-08-24 17:50:38 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 17:50:38 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 17:50:38 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 17:50:38 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 17:50:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 17:50:38 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.288 seconds (process running for 7.851)
+2025-08-24 17:52:19 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 17:52:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 17:52:19 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 18:06:29 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 8384 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:06:29 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:06:29 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:06:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:06:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:06:30 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:06:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:06:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:06:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:06:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:06:32 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2825 ms
+2025-08-24 18:06:33 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:06:33 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:06:33 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:06:33 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:06:33 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:06:34 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:06:34 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:06:34 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:06:35 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:06:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:06:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:06:35 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756073195423
+2025-08-24 18:06:36 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:06:36 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:06:36 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:06:36 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:06:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:06:36 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.721 seconds (process running for 8.297)
+2025-08-24 18:06:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:06:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:06:48 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-24 18:18:13 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 33808 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:18:13 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:18:13 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:18:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:18:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:18:14 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:18:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:18:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:18:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:18:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:18:16 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2764 ms
+2025-08-24 18:18:17 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:18:17 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:18:17 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:18:17 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:18:17 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:18:17 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:18:17 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:18:18 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:18:19 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:18:19 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:18:19 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:18:19 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756073899334
+2025-08-24 18:18:19 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:18:19 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:18:19 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:18:19 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:18:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:18:19 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.494 seconds (process running for 8.034)
+2025-08-24 18:18:25 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:18:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:18:25 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 18:22:39 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 23396 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:22:39 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:22:39 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:22:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:22:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:22:41 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:22:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:22:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:22:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:22:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:22:42 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2706 ms
+2025-08-24 18:22:43 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:22:43 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:22:43 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:22:43 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:22:43 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:22:44 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:22:44 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:22:44 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:22:45 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:22:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:22:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:22:45 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756074165322
+2025-08-24 18:22:45 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:22:45 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:22:45 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:22:45 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:22:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:22:45 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.214 seconds (process running for 7.757)
+2025-08-24 18:23:38 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:23:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:23:38 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2025-08-24 18:29:43 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 28716 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:29:43 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:29:43 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:29:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:29:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:29:44 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:29:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:29:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:29:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:29:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:29:45 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2757 ms
+2025-08-24 18:29:47 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:29:47 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:29:47 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:29:47 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:29:47 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:29:47 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:29:47 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:29:48 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:29:48 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:29:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:29:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:29:49 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756074589006
+2025-08-24 18:29:49 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:29:49 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:29:49 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:29:49 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:29:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:29:49 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.217 seconds (process running for 7.755)
+2025-08-24 18:30:03 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:30:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:30:03 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-08-24 18:30:49 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 24504 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:30:49 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:30:49 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:30:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:30:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:30:51 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:30:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:30:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:30:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:30:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:30:52 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2769 ms
+2025-08-24 18:30:54 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:30:54 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:30:54 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:30:54 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:30:54 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:30:54 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:30:54 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:30:55 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:30:55 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:30:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:30:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:30:55 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756074655955
+2025-08-24 18:30:56 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:30:56 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:30:56 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:30:56 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:30:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:30:56 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.5 seconds (process running for 8.045)
+2025-08-24 18:31:00 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 12140 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:31:00 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:31:00 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:31:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:31:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:31:02 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:31:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:31:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:31:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:31:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:31:03 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2748 ms
+2025-08-24 18:31:05 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:31:05 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:31:05 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:31:05 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:31:05 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:31:05 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:31:05 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:31:06 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:31:06 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:31:06 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:31:06 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:31:06 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756074666800
+2025-08-24 18:31:07 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:31:07 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:31:07 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:31:07 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:31:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:31:07 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.489 seconds (process running for 8.016)
+2025-08-24 18:31:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:31:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:31:16 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 18:42:14 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 19448 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 18:42:14 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 18:42:14 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 18:42:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 18:42:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 18:42:16 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2025-08-24 18:42:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 18:42:17 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 18:42:17 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 18:42:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 18:42:17 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2600 ms
+2025-08-24 18:42:18 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 18:42:18 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 18:42:18 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 18:42:18 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 18:42:18 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 18:42:18 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 18:42:19 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 18:42:19 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 18:42:20 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 18:42:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:42:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:42:20 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756075340414
+2025-08-24 18:42:21 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 18:42:21 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 18:42:21 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 18:42:21 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 18:42:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 18:42:21 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.213 seconds (process running for 7.776)
+2025-08-24 18:42:23 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 18:42:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 18:42:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  c.p.admin.service.EthereumService - addProperty tx=0x5003da09303c1f7370cab639031df9a976cdf001974c2707944c30f60bfa8991
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=admin-producer-1] Instantiated an idempotent producer.
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756075414438
+2025-08-24 18:43:34 [kafka-producer-network-thread | admin-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=admin-producer-1] Cluster ID: KlH5wHnCTxyFzpcxKxEFsA
+2025-08-24 18:43:34 [kafka-producer-network-thread | admin-producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=admin-producer-1] ProducerId set to 2 with epoch 0
+2025-08-24 18:43:34 [http-nio-8080-exec-4] INFO  c.p.admin.service.PropertyService - Property added id=8 address='111 115 TOIVO ST' owner=0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
+2025-08-24 18:52:34 [kafka-producer-network-thread | admin-producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=admin-producer-1] Node -1 disconnected.
+2025-08-24 19:02:34 [kafka-producer-network-thread | admin-producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=admin-producer-1] Node -1 disconnected.
+2025-08-24 19:10:21 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 25424 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 19:10:21 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 19:10:21 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 19:10:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 19:10:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 19:10:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2025-08-24 19:10:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 19:10:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 19:10:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 19:10:24 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 19:10:24 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2665 ms
+2025-08-24 19:10:26 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 19:10:26 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 19:10:26 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 19:10:26 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 19:10:26 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 19:10:26 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 19:10:26 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 19:10:26 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 19:10:27 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 19:10:27 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 19:10:27 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 19:10:27 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756077027344
+2025-08-24 19:10:27 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 19:10:27 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 19:10:27 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 19:10:27 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 19:10:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 19:10:27 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.099 seconds (process running for 7.626)
+2025-08-24 19:10:58 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-24 19:10:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-08-24 19:10:58 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  c.p.admin.service.EthereumService - addProperty tx=0xbd613010b008341b0af185cc540443eb73ec7e63829330cbb826fa9975534ffa
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.k.clients.producer.KafkaProducer - [Producer clientId=admin-producer-1] Instantiated an idempotent producer.
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756077215515
+2025-08-24 19:13:35 [kafka-producer-network-thread | admin-producer-1] INFO  org.apache.kafka.clients.Metadata - [Producer clientId=admin-producer-1] Cluster ID: KlH5wHnCTxyFzpcxKxEFsA
+2025-08-24 19:13:35 [kafka-producer-network-thread | admin-producer-1] INFO  o.a.k.c.p.i.TransactionManager - [Producer clientId=admin-producer-1] ProducerId set to 3 with epoch 0
+2025-08-24 19:13:35 [http-nio-8080-exec-5] INFO  c.p.admin.service.PropertyService - Property added id=9 address='618 McIntosh ST' owner=0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 19:22:35 [kafka-producer-network-thread | admin-producer-1] INFO  o.apache.kafka.clients.NetworkClient - [Producer clientId=admin-producer-1] Node -1 disconnected.
+2025-08-24 19:23:42 [http-nio-8080-exec-6] INFO  c.p.admin.service.EthereumService - transferOwnership(9) -> 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 tx=0x0c3bd1693570d9f696169d6ff2d06b0f9dcf98f12219e7bbe349d27a2ab7caa7
+2025-08-24 19:23:42 [http-nio-8080-exec-6] INFO  c.p.admin.service.PropertyService - Ownership transferred id=9 newOwner=0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 19:29:46 [main] INFO  c.p.admin.AdminApplication - Starting AdminApplication using Java 17.0.8 with PID 24816 (E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin\build\classes\java\main started by LENOVO in E:\Lakehead\BlockChain\Final_Project\PropertyChain\backend\admin)
+2025-08-24 19:29:46 [main] DEBUG c.p.admin.AdminApplication - Running with Spring Boot v3.3.2, Spring v6.1.11
+2025-08-24 19:29:46 [main] INFO  c.p.admin.AdminApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-24 19:29:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2025-08-24 19:29:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-08-24 19:29:47 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2025-08-24 19:29:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-24 19:29:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-24 19:29:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.26]
+2025-08-24 19:29:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-24 19:29:49 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2764 ms
+2025-08-24 19:29:50 [main] INFO  c.p.admin.service.EthereumService - Ethereum client: Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js
+2025-08-24 19:29:50 [main] INFO  c.p.admin.service.EthereumService - Owner:   0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
+2025-08-24 19:29:50 [main] INFO  c.p.admin.service.EthereumService - Buyer:   0x70997970C51812dc3A010C7d01b50e0d17dc79C8
+2025-08-24 19:29:50 [main] INFO  c.p.admin.service.EthereumService - Seller:  0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC
+2025-08-24 19:29:50 [main] INFO  c.p.admin.service.EthereumService - Arbiter: 0x90F79bf6EB2c4f870365E785982E1f101E93b906
+2025-08-24 19:29:50 [main] WARN  c.p.a.s.EthereumEventListenerService - Ethereum subscription disabled (ethereum.subscribe=false).
+2025-08-24 19:29:51 [main] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-08-24 19:29:51 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2025-08-24 19:29:52 [main] INFO  o.a.k.c.admin.AdminClientConfig - AdminClientConfig values: 
+	auto.include.jmx.reporter = true
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = admin-admin-0
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = true
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2025-08-24 19:29:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.7.1
+2025-08-24 19:29:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka commitId: e2494e6ffb89f828
+2025-08-24 19:29:52 [main] INFO  o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1756078192199
+2025-08-24 19:29:52 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.utils.AppInfoParser - App info kafka.admin.client for admin-admin-0 unregistered
+2025-08-24 19:29:52 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-08-24 19:29:52 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-08-24 19:29:52 [kafka-admin-client-thread | admin-admin-0] INFO  o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-08-24 19:29:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-24 19:29:52 [main] INFO  c.p.admin.AdminApplication - Started AdminApplication in 7.454 seconds (process running for 8.012)

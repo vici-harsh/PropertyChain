@@ -1,56 +1,74 @@
 package com.propertychain.admin.service;
 
 import com.propertychain.admin.contracts.PropertyOwnership;
-import com.propertychain.admin.event.EventProducer;
-import com.propertychain.admin.repository.PropertyRedisService;
+import com.propertychain.admin.model.Property;
 import io.reactivex.disposables.Disposable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import java.math.BigInteger;
-import java.util.Map;
+import java.util.Optional;
 
+@ConditionalOnProperty(name = "ethereum.enabled", havingValue = "true", matchIfMissing = true)
 @Service
 public class EthereumEventListenerService {
     private static final Logger logger = LoggerFactory.getLogger(EthereumEventListenerService.class);
 
-    @Autowired
-    private EthereumService ethereumService;
-    @Autowired
-    private PropertyRedisService redisService;
-    @Autowired
-    private EventProducer eventProducer;
+    private final EthereumService ethereumService;
+    private final PropertyRedisService redisService;
+    private final EventProducer eventProducer;
 
     private Disposable ownershipSubscription;
 
+    public EthereumEventListenerService(EthereumService ethereumService,
+                                        PropertyRedisService redisService,
+                                        EventProducer eventProducer) {
+        this.ethereumService = ethereumService;
+        this.redisService = redisService;
+        this.eventProducer = eventProducer;
+    }
+
     @PostConstruct
     public void startListening() {
-        PropertyOwnership contract = ethereumService.getOwnershipContract();  // Add getter in EthereumService if needed
+        // extra safety: only subscribe if both online AND explicitly enabled
+        boolean subscribe = Boolean.parseBoolean(System.getProperty("ethereum.subscribe",
+                System.getenv().getOrDefault("ethereum.subscribe", "false")));
+        if (!subscribe) {
+            logger.warn("Ethereum subscription disabled (ethereum.subscribe=false).");
+            return;
+        }
+        if (!ethereumService.isOnline()) {
+            logger.warn("Ethereum offline at startup; event listener not started.");
+            return;
+        }
 
-        ownershipSubscription = contract.ownershipTransferredEventFlowable(DefaultBlockParameterName.LATEST, DefaultBlockParameterName.LATEST)
-                .subscribe(event -> {
-                    BigInteger propertyId = event.propertyId;
-                    String from = event.from;
-                    String to = event.to;
+        PropertyOwnership contract = ethereumService.getOwnershipContract();
 
-                    logger.info("OwnershipTransferred event: {} from {} to {}", propertyId, from, to);
+        ownershipSubscription = contract.ownershipTransferredEventFlowable(
+                DefaultBlockParameterName.LATEST, DefaultBlockParameterName.LATEST
+        ).subscribe(event -> {
+            BigInteger propertyId = event.propertyId;
+            String from = event.from;
+            String to = event.to;
 
-                    // Update Redis
-                    Map<String, Object> prop = redisService.getProperty(propertyId.longValue());
-                    if (prop != null) {
-                        redisService.saveProperty(propertyId.longValue(), (String) prop.get("address"), to, (String) prop.get("description"));
-                    }
+            logger.info("OwnershipTransferred event: {} from {} to {}", propertyId, from, to);
 
-                    // Publish to Kafka
-                    String eventJson = String.format("{\"type\":\"OwnershipTransferredEvent\",\"id\":%s,\"from\":\"%s\",\"to\":\"%s\"}",
-                            propertyId, from, to);
-                    eventProducer.publishEvent(eventJson);
-                }, throwable -> logger.error("Event subscription error: {}", throwable.getMessage()));
+            Optional<Property> opt = redisService.getProperty(propertyId.longValue());
+            opt.ifPresent(p -> {
+                p.setOwnerWallet(to);
+                redisService.saveProperty(p);
+            });
+
+            String payload = String.format(
+                    "{\"type\":\"OwnershipTransferredEvent\",\"id\":%s,\"from\":\"%s\",\"to\":\"%s\"}",
+                    propertyId, from, to);
+            eventProducer.publishEvent(payload);
+        }, t -> logger.error("Event subscription error: {}", t.getMessage()));
     }
 
     @PreDestroy

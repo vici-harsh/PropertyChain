@@ -1,28 +1,57 @@
 package com.propertychain.admin.dto;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
+import jakarta.validation.constraints.*;
+import lombok.Data;
+
+import java.math.BigInteger;
+
+@Data
 public class EscrowRequest {
-    @NotBlank(message = "Seller address is required")
+    @NotBlank
+    @Pattern(regexp = "^0x[a-fA-F0-9]{40}$", message = "Invalid Ethereum address")
     private String seller;
 
-    @NotBlank(message = "Arbiter address is required")
+    @NotBlank
+    @Pattern(regexp = "^0x[a-fA-F0-9]{40}$", message = "Invalid Ethereum address")
     private String arbiter;
 
-    @NotNull(message = "Value is required")
-    private String value;
+    @NotNull @Positive
+    private java.math.BigInteger valueWei;   // FE converts ETH->wei before sending
 
-    @NotNull(message = "Release time is required")
-    private String releaseTime;
+    @NotNull @Positive
+    private Long releaseTime;                // epoch seconds
 
-    // Getters and setters
-    public String getSeller() { return seller; }
-    public void setSeller(String seller) { this.seller = seller; }
-    public String getArbiter() { return arbiter; }
-    public void setArbiter(String arbiter) { this.arbiter = arbiter; }
-    public String getValue() { return value; }
-    public void setValue(String value) { this.value = value; }
-    public String getReleaseTime() { return releaseTime; }
-    public void setReleaseTime(String releaseTime) { this.releaseTime = releaseTime; }
+
+    public String getSeller() {
+        return seller;
+    }
+
+    public void setSeller(String seller) {
+        this.seller = seller;
+    }
+
+    public String getArbiter() {
+        return arbiter;
+    }
+
+    public void setArbiter(String arbiter) {
+        this.arbiter = arbiter;
+    }
+
+    public BigInteger getValueWei() {
+        return valueWei;
+    }
+
+    public void setValueWei(BigInteger valueWei) {
+        this.valueWei = valueWei;
+    }
+
+    public Long getReleaseTime() {
+        return releaseTime;
+    }
+
+    public void setReleaseTime(Long releaseTime) {
+        this.releaseTime = releaseTime;
+    }
 }

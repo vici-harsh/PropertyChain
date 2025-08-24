@@ -1,30 +1,35 @@
 package com.propertychain.admin.service;
 
+import com.propertychain.admin.model.Property;
+import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.propertychain.admin.repository.PropertyRedisService;
-
-import jakarta.annotation.PostConstruct;
-import java.nio.file.*;
-import java.util.Map;
-import java.util.regex.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class LogRecoveryService {
     private static final Logger logger = LoggerFactory.getLogger(LogRecoveryService.class);
-    private static final Pattern PROPERTY_ADDED_PATTERN = Pattern.compile("PropertyAdded: (\\d+), (.+), (.+), (.+)");
-    private static final Pattern OWNERSHIP_TRANSFERRED_PATTERN = Pattern.compile("OwnershipTransferred: (\\d+) from (.+) to (.+)");  // Add this
-    private static final Pattern ESCROW_CREATED_PATTERN = Pattern.compile("New Escrow deployed at: (.+)");  // Add basic; enhance as needed
 
-    @Autowired
-    private PropertyRedisService redisService;
+    private static final Pattern PROPERTY_ADDED_PATTERN =
+            Pattern.compile("PropertyAdded: (\\d+), (.+), (.+), (.+)");
+    private static final Pattern OWNERSHIP_TRANSFERRED_PATTERN =
+            Pattern.compile("OwnershipTransferred: (\\d+) from (.+) to (.+)");
+
+    private final PropertyRedisService redisService;
+
+    public LogRecoveryService(PropertyRedisService redisService) {
+        this.redisService = redisService;
+    }
 
     @PostConstruct
     public void recoverFromLogs() {
-        Path logPath = Paths.get("logs/propertychain.log");
+        Path logPath = Path.of("logs/propertychain.log");
         if (!Files.exists(logPath)) return;
 
         try (var lines = Files.lines(logPath)) {
@@ -43,14 +48,14 @@ public class LogRecoveryService {
                 if (transferMatcher.find()) {
                     Long id = Long.parseLong(transferMatcher.group(1));
                     String newOwner = transferMatcher.group(3);
-                    // Fetch existing from Redis and update owner
-                    Map<String, Object> prop = redisService.getProperty(id);
-                    if (prop != null) {
-                        redisService.saveProperty(id, (String) prop.get("address"), newOwner, (String) prop.get("description"));
-                        logger.info("Recovered transfer for property: {}", id);
-                    }
-                }
 
+                    Optional<Property> prop = redisService.getProperty(id);
+                    prop.ifPresent(p -> {
+                        p.setOwnerWallet(newOwner);
+                        redisService.saveProperty(p);
+                        logger.info("Recovered transfer for property: {}", id);
+                    });
+                }
             });
         } catch (Exception e) {
             logger.error("Log recovery failed: {}", e.getMessage());
