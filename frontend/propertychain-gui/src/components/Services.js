@@ -1,22 +1,22 @@
 import React from 'react';
 
-function Services() {
+function Services({ isHomeVersion = false }) {
   return (
-    <section id="services" className="services">
-      <div class="container">
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Odio et unde deleniti. Deserunt numquam exercitationem.</p>
+    <section id="services" className="services section-bg">
+      <div className="container">
+        <div className="section-title">
+          <h2>{isHomeVersion ? 'Our Services' : 'Services'}</h2>
+          <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box">
-              <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">Nesciunt Mete</a></h4>
-              <p class="description">Provident nihil minus qui consequatur non omnis maiores.</p>
+        <div className="row">
+          <div className="col-lg-4 col-md-6">
+            <div className="service-item">
+              <i className="bi bi-card-checklist"></i>
+              <h3>Nesciunt Mete</h3>
+              <p>Provident nihil minus qui consequatur non omnis maiores...</p>
             </div>
           </div>
-          // Add more icon-boxes from the HTML
+          {/* Add more service items */}
         </div>
       </div>
     </section>

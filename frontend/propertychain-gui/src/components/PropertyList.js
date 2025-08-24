@@ -6,10 +6,11 @@ function PropertyList({ account }) {
   const [properties, setProperties] = useState([]);
 
   useEffect(() => {
-    getAllProperties().then(res => setProperties(res.data || [])).catch(err => console.error('Error fetching properties:', err));
+    getAllProperties()
+      .then(res => setProperties(res.data || []))
+      .catch(err => console.error('Error fetching properties:', err));
   }, []);
 
-  // Array of available image paths (adjust based on your assets)
   const propertyImages = [
     '../assets/img/properties/property-1.jpg',
     '../assets/img/properties/property-2.jpg',
@@ -31,22 +32,22 @@ function PropertyList({ account }) {
             <div key={prop.id} className="col-lg-4 col-md-6">
               <div className="property-item">
                 <img
-                  src={require(propertyImages[index % propertyImages.length])} // Cycle through images
+                  src={propertyImages[index % propertyImages.length]}
                   alt={`Property ${prop.id}`}
                   className="img-fluid"
-                  onError={(e) => {
-                    e.target.src = require('../assets/img/properties/property-1.jpg'); // Fallback image
-                    console.log('Image load failed, using fallback:', e.target.src);
-                  }}
                 />
                 <div className="property-content">
                   <div className="price"><span>Rent</span> <strong>$12.000</strong></div>
                   <h3><a href="#">{prop.address}</a></h3>
                   <div className="location"><i className="fas fa-map-marker-alt"></i> {prop.address}</div>
                   <div className="property-type"><i className="fas fa-home"></i> House</div>
-                  <Link to={`/transfer/${prop.id}`} className="btn btn-primary">Transfer</Link>
-                  <Link to={`/escrow/${prop.id}`} className="btn btn-secondary">Escrow</Link>
-                  <Link to={`/history/${prop.id}`} className="btn btn-info">History</Link>
+                  <ul className="property-features">
+                    <li>Area: 340m2</li>
+                    <li>Beds: 5</li>
+                    {/* From template */}
+                  </ul>
+                  <Link to={`/property/${prop.id}`} className="btn btn-info">Details</Link>
+                  {/* Other links */}
                 </div>
               </div>
             </div>

@@ -30,8 +30,9 @@ public class PropertyService {
     private EventProducer eventProducer;
 
     public Long addPropertyOnChain(String address, String description) throws Exception {
-        Long propertyId = ethereumService.addProperty(address, description);
-        String owner = ethereumService.getOwner(propertyId);
+        BigInteger biId = ethereumService.addProperty(address, description);
+        Long propertyId = biId.longValue();  // Convert BigInteger to Long (safe for small IDs)
+        String owner = ethereumService.getOwner(biId);
 
         redisService.saveProperty(propertyId, address, owner, description);
         logger.info("PropertyAdded: {}, {}, {}, {}", propertyId, address, owner, description);
@@ -50,7 +51,7 @@ public class PropertyService {
         }
         String currentOwner = (String) property.get("owner");
 
-        ethereumService.transferOwnership(propertyId, newOwner);
+        ethereumService.transferOwnership(BigInteger.valueOf(propertyId), newOwner);  // Convert Long to BigInteger
         redisService.saveProperty(propertyId, (String) property.get("address"), newOwner, (String) property.get("description"));
         logger.info("OwnershipTransferred: {} from {} to {}", propertyId, currentOwner, newOwner);
 
@@ -63,11 +64,11 @@ public class PropertyService {
         List<Map<String, Object>> properties = redisService.getAllProperties();
 
         properties.forEach(property -> {
-            Long propertyId = Long.parseLong(property.get("id").toString());
+            Long propertyIdLong = Long.parseLong(property.get("id").toString());
             try {
-                property.put("blockchainOwner", ethereumService.getOwner(propertyId));
+                property.put("blockchainOwner", ethereumService.getOwner(BigInteger.valueOf(propertyIdLong)));  // Convert Long to BigInteger
             } catch (Exception e) {
-                logger.error("Error fetching owner for property {}: {}", propertyId, e.getMessage());
+                logger.error("Error fetching owner for property {}: {}", propertyIdLong, e.getMessage());
                 property.put("blockchainOwner", "Error fetching");
             }
         });
@@ -76,7 +77,7 @@ public class PropertyService {
     }
 
     public String createEscrow(Long propertyId, String seller, String arbiter, BigInteger value, BigInteger releaseTime) throws Exception {
-        String escrowAddress = ethereumService.deployNewEscrow(seller, arbiter, propertyId, value, releaseTime);
+        String escrowAddress = ethereumService.deployNewEscrow(seller, arbiter, BigInteger.valueOf(propertyId), value, releaseTime);  // Convert Long to BigInteger
         logger.info("Escrow created for property {} at {}", propertyId, escrowAddress);
 
         String eventJson = String.format("{\"type\":\"EscrowCreated\",\"id\":%d,\"seller\":\"%s\",\"arbiter\":\"%s\",\"value\":\"%s\",\"releaseTime\":\"%s\",\"address\":\"%s\"}",
@@ -87,7 +88,7 @@ public class PropertyService {
     }
 
     public void releaseFunds(Long propertyId) throws Exception {
-        ethereumService.releaseFunds(propertyId);
+        ethereumService.releaseFunds(BigInteger.valueOf(propertyId));  // Convert Long to BigInteger (though unused in method)
         logger.info("Funds released for property {}", propertyId);
 
         String eventJson = String.format("{\"type\":\"FundsReleased\",\"id\":%d}", propertyId);
@@ -102,6 +103,8 @@ public class PropertyService {
                 ethereumService.getOwnerCredentials(),
                 new DefaultGasProvider()
         );
+        // TODO: Enhance to fetch real history from OwnershipTransferred events
+        // For example, subscribe to events or query logs filtered by propertyId
         history.add("Initial owner set for property " + id);
         return history;
     }

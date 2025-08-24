@@ -67,7 +67,7 @@ function Login({ setAccount }) {
       <footer id="footer" className="py-4" style={{ backgroundColor: '#1e1e1e', color: '#fff' }}>
         <div className="container">
           <div className="text-center">
-            <p>&copy; 2025 EstateAgency. All Rights Reserved.</p>
+            <p>&copy; 2025 lakehead. All Rights Reserved.</p>
           </div>
         </div>
       </footer>

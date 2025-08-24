@@ -37,6 +37,10 @@
   --nav-dropdown-hover-color: #2eca6a; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+
+body {
+  padding-top: 80px; /* Adjust based on header height */
+}
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -628,7 +632,6 @@ section,
 }
 
 @media (max-width: 1199px) {
-
   section,
   .section {
     scroll-margin-top: 66px;
@@ -657,40 +660,50 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  padding: 0;
-}
 
-.hero .carousel {
+/* Hero Section */
+#hero {
   width: 100%;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
-  background-color: var(--background-color);
+  height: 100vh; /* Ensure full viewport height */
+  background: url("E:/Lakehead/BlockChain/Final_Project/PropertyChain/frontend/propertychain-gui/src/assets/img/hero-carousel/hero-carousel-1.jpg") top center no-repeat;
+  background-size: cover;
   position: relative;
   overflow: hidden;
 }
 
-.hero img {
+.hero {
+  padding: 0;
+}
+
+.hero .swiper {
+  width: 100%;
+  height: 100%; /* Full height of hero */
   position: absolute;
   inset: 0;
-  display: block;
+  z-index: 1;
+}
+
+.hero .swiper-wrapper {
+  height: 100%; /* Ensure wrapper inherits full height */
+}
+
+.hero .swiper-slide {
+  width: 100%; /* Ensure full width of the column */
+  height: 100%; /* Full height of each slide */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .swiper-slide img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 1;
 }
 
-.hero .carousel-item {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.hero .carousel-item:before {
+.hero .swiper-slide:before {
   content: "";
   background: color-mix(in srgb, var(--background-color), transparent 60%);
   position: absolute;
@@ -698,9 +711,10 @@ section,
   z-index: 2;
 }
 
-.hero .carousel-container {
-  position: absolute;
-  inset: 90px 100px;
+/* Remove inset positioning and adjust layout */
+.hero .swiper-container {
+  width: 100%; /* Full width of the column */
+  height: 100%; /* Full height of the column */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -709,98 +723,78 @@ section,
 }
 
 @media (max-width: 575px) {
-  .hero .carousel-container {
-    inset: 90px 50px;
+  .hero .swiper-container {
+    width: 100%; /* Full width on mobile */
+    height: 100%; /* Full height on mobile */
   }
 }
 
-.hero h2 {
-  margin-bottom: 30px;
-  font-size: 56px;
-  font-weight: 900;
-  text-transform: uppercase;
+/* Ensure content column matches height */
+.hero .col-lg-6.hero-img {
+  height: 100%; /* Full height of the column */
+  position: relative;
 }
 
-.hero h2 span {
-  color: var(--accent-color);
+/* Navigation and Pagination */
+.hero .swiper-button-prev,
+.hero .swiper-button-next {
+  color: var(--contrast-color) !important;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  z-index: 4;
 }
 
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 30px;
-  }
+.hero .swiper-button-prev:hover,
+.hero .swiper-button-next:hover {
+  opacity: 0.9;
 }
 
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  font-family: var(--heading-font);
-  font-weight: 600;
+.hero .swiper-pagination {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.hero .swiper-pagination-bullet {
+  width: 20px;
+  height: 6px;
+  background: color-mix(in srgb, var(--default-color), transparent 85%);
+  opacity: 1;
+  margin: 0 5px;
+}
+
+.hero .swiper-pagination-bullet-active {
+  background: var(--accent-color);
+  width: 40px;
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero .property-info h2 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero .property-info p {
   font-size: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 10px 40px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px 0;
-  align-self: flex-start;
-  flex-shrink: 0;
-  border: 2px solid var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.hero .sale-rent {
+  transition: 0.3s;
 }
 
 .hero .btn-get-started:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
-  width: 10%;
-  transition: 0.3s;
-  opacity: 0.5;
-  z-index: 3;
-}
-
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
-  opacity: 0.5;
-}
-
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
-  opacity: 0.9;
-}
-
-@media (min-width: 1024px) {
-
-  .hero .carousel-control-prev,
-  .hero .carousel-control-next {
-    width: 5%;
-  }
-}
-
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
-  background: none;
-  font-size: 32px;
-  line-height: 1;
-}
-
-.hero .carousel-indicators {
-  list-style: none;
-}
-
-.hero .carousel-indicators li {
-  cursor: pointer;
-  opacity: 1;
-  height: 6px;
-  width: 20px;
-  transition: 0.3s;
-  padding: 0;
-}
-
-.hero .carousel-indicators .active {
-  background-color: var(--accent-color);
-  width: 40px;
 }
 
 /*--------------------------------------------------------------

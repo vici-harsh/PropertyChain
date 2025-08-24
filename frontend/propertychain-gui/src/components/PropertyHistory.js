@@ -1,3 +1,4 @@
+// PropertyHistory.js - No major changes needed, as it aligns with backend getHistory
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getPropertyHistory } from '../services/api';

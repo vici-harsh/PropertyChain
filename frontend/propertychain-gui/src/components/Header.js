@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Header({ account }) {
@@ -8,53 +7,80 @@ function Header({ account }) {
 
   useEffect(() => {
     const toggleMobileNav = () => {
-      const body = document.querySelector('body');
-      if (body && mobileNavToggleBtn.current) {
-        body.classList.toggle('mobile-nav-active');
+      if (mobileNavToggleBtn.current) {
+        document.body.classList.toggle('mobile-nav-active');
         mobileNavToggleBtn.current.classList.toggle('bi-list');
         mobileNavToggleBtn.current.classList.toggle('bi-x');
       }
     };
 
-    if (mobileNavToggleBtn.current) {
-      mobileNavToggleBtn.current.addEventListener('click', toggleMobileNav);
-    }
-
-    const toggleScroll = () => {
+    const toggleScrollTop = () => {
       if (scrollTop.current) {
-        window.scrollY > 100 ? scrollTop.current.classList.add('active') : scrollTop.current.classList.remove('active');
+        window.scrollY > 100
+          ? scrollTop.current.classList.add('active')
+          : scrollTop.current.classList.remove('active');
       }
     };
-    window.addEventListener('scroll', toggleScroll);
-    window.addEventListener('load', toggleScroll);
+
+    const mobileBtn = mobileNavToggleBtn.current;
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', toggleMobileNav);
+    }
+
+    window.addEventListener('load', toggleScrollTop);
+    window.addEventListener('scroll', toggleScrollTop);
 
     return () => {
-      if (mobileNavToggleBtn.current) {
-        mobileNavToggleBtn.current.removeEventListener('click', toggleMobileNav);
+      if (mobileBtn) {
+        mobileBtn.removeEventListener('click', toggleMobileNav);
       }
-      window.removeEventListener('scroll', toggleScroll);
-      window.removeEventListener('load', toggleScroll);
+      window.removeEventListener('load', toggleScrollTop);
+      window.removeEventListener('scroll', toggleScrollTop);
     };
   }, []);
 
+  const handleScrollTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <header id="header" className="fixed-top">
-      <div className="container d-flex align-items-center">
-        <h1 className="logo me-auto"><Link to="/">EstateAgency</Link></h1>
-        <Navbar expand="lg" className="navbar">
-          <Nav className="navbar-nav">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/about">About</Nav.Link>
-            <Nav.Link as={Link} to="/services">Services</Nav.Link>
-            <Nav.Link as={Link} to="/properties">Properties</Nav.Link>
-            <Nav.Link as={Link} to="/agents">Agents</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-          </Nav>
-        </Navbar>
-        <p>Account: {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Not Connected'}</p>
-        <button ref={mobileNavToggleBtn} className="mobile-nav-toggle bi-list"></button>
-        <a ref={scrollTop} href="#" className="scroll-top d-flex align-items-center justify-content-center"><i className="bi bi-arrow-up-short"></i></a>
+    <header id="header" className="header d-flex align-items-center fixed-top">
+      <div className="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <a href="/" className="logo d-flex align-items-center">
+          {/* Uncomment below if using an image logo */}
+          {/* <img src="/assets/img/logo.png" alt="Logo" /> */}
+          <h1 className="sitename">
+            Estate<span>Agency</span>
+          </h1>
+        </a>
+        <nav id="navbar" className="navmenu">
+          <ul>
+            <li><Link className="nav-link" to="/">Home</Link></li>
+            <li><Link className="nav-link" to="/services">Services</Link></li>
+            <li><Link className="nav-link" to="/properties">Properties</Link></li>
+            <li><Link className="nav-link" to="/add-property">Add Property</Link></li>
+            <li><Link className="nav-link" to="/transfer/:id">Transfer</Link></li>
+            <li><Link className="nav-link" to="/escrow/:id">Escrow</Link></li>
+            <li><Link className="nav-link" to="/history/:id">History</Link></li>
+          </ul>
+          <i
+            ref={mobileNavToggleBtn}
+            className="mobile-nav-toggle d-xl-none bi bi-list"
+          ></i>
+        </nav>
+        <span className="small text-muted">
+          Account: {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : 'Not Connected'}
+        </span>
       </div>
+      <a
+        ref={scrollTop}
+        onClick={handleScrollTop}
+        className="scroll-top d-flex align-items-center justify-content-center"
+        href="#"
+      >
+        <i className="bi bi-arrow-up-short"></i>
+      </a>
     </header>
   );
 }

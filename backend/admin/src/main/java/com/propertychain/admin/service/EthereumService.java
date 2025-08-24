@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.web3j.crypto.Credentials;
 import org.web3j.protocol.Web3j;
+import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.methods.response.TransactionReceipt;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.gas.DefaultGasProvider;
@@ -59,7 +60,14 @@ public class EthereumService {
                     ownerCredentials,
                     new DefaultGasProvider()
             );
-            logger.info("Loaded ownership contract at: {} with owner {}", ownershipContractAddress, ownerCredentials.getAddress());
+            // Verify contract code exists
+            String ownershipCode = web3j.ethGetCode(ownershipContractAddress, DefaultBlockParameterName.LATEST).send().getCode();
+            if ("0x".equals(ownershipCode)) {
+                logger.error("No code found at PropertyOwnership address: {}", ownershipContractAddress);
+                throw new RuntimeException("Invalid PropertyOwnership contract address");
+            }
+            logger.info("Loaded ownership contract at: {} with owner {}",
+                    ownershipContractAddress, ownerCredentials.getAddress());
 
             Credentials buyerCredentials = Credentials.create(buyerPrivateKey);
             escrowContract = PropertyEscrow.load(
@@ -68,8 +76,26 @@ public class EthereumService {
                     buyerCredentials,
                     new DefaultGasProvider()
             );
-            logger.info("Loaded escrow contract at: {} with buyer {}", escrowContractAddress, buyerCredentials.getAddress());
-
+            // Verify contract code exists
+            String escrowCode = web3j.ethGetCode(escrowContractAddress, DefaultBlockParameterName.LATEST).send().getCode();
+            if ("0x".equals(escrowCode)) {
+                logger.error("No code found at PropertyEscrow address: {}", escrowContractAddress);
+                throw new RuntimeException("Invalid PropertyEscrow contract address");
+            }
+            // Safely fetch buyer
+            String buyerAddress = null;
+            try {
+                buyerAddress = escrowContract.buyer().send();
+                if (buyerAddress == null || "0x0000000000000000000000000000000000000000".equals(buyerAddress)) {
+                    logger.warn("Buyer not set in escrow contract at: {}", escrowContractAddress);
+                } else {
+                    logger.info("Loaded escrow contract at: {} with buyer {}",
+                            escrowContractAddress, buyerAddress);
+                }
+            } catch (Exception e) {
+                logger.warn("Failed to fetch buyer from escrow contract: {}", e.getMessage());
+                // Allow startup to continue
+            }
         } catch (Exception e) {
             logger.error("Contract loading failed: {}", e.getMessage());
             throw new RuntimeException("Contract loading failed", e);
@@ -104,23 +130,36 @@ public class EthereumService {
         return escrowContract;
     }
 
-    public Long addProperty(String propertyAddress, String description) throws Exception {
-        TransactionReceipt receipt = ownershipContract.addProperty(
-                getOwnerCredentials().getAddress(),
-                propertyAddress,
-                description
-        ).send();
-        logger.info("PropertyAdded TX: {}", receipt.getTransactionHash());
-        return ownershipContract.propertyCount().send().longValue();
+    public BigInteger addProperty(String propertyAddress, String description) throws Exception {
+        try {
+            // Use the contract wrapper directly with string parameters
+            TransactionReceipt receipt = ownershipContract.addProperty(
+                    getOwnerCredentials().getAddress(),
+                    propertyAddress,
+                    description
+            ).send();
+
+            if (!receipt.isStatusOK()) {
+                logger.error("Transaction failed with status: {}", receipt.getStatus());
+                throw new Exception("Transaction reverted with status: " + receipt.getStatus());
+            }
+
+            logger.info("PropertyAdded TX: {}", receipt.getTransactionHash());
+            return ownershipContract.propertyCount().send();
+        } catch (Exception e) {
+            logger.error("Failed to add property: address={}, description={}, error={}",
+                    propertyAddress, description, e.getMessage(), e);
+            throw e;
+        }
     }
 
-    public String getOwner(Long propertyId) throws Exception {
-        return ownershipContract.getCurrentOwner(BigInteger.valueOf(propertyId)).send();
+    public String getOwner(BigInteger propertyId) throws Exception {
+        return ownershipContract.getCurrentOwner(propertyId).send();
     }
 
-    public void transferOwnership(Long propertyId, String newOwner) throws Exception {
+    public void transferOwnership(BigInteger propertyId, String newOwner) throws Exception {
         TransactionReceipt receipt = ownershipContract.transferOwnership(
-                BigInteger.valueOf(propertyId),
+                propertyId,
                 newOwner
         ).send();
         logger.info("OwnershipTransferred TX: {}", receipt.getTransactionHash());
@@ -129,7 +168,7 @@ public class EthereumService {
     public String deployNewEscrow(
             String seller,
             String arbiter,
-            Long propertyId,
+            BigInteger propertyId,
             BigInteger value,
             BigInteger releaseTime
     ) throws Exception {
@@ -140,7 +179,7 @@ public class EthereumService {
                 value,
                 seller,
                 arbiter,
-                BigInteger.valueOf(propertyId),
+                propertyId,
                 releaseTime
         ).send();
         String escrowAddress = escrow.getContractAddress();
@@ -148,15 +187,11 @@ public class EthereumService {
         return escrowAddress;
     }
 
-    public void releaseFunds(Long propertyId) throws Exception {
+    public void releaseFunds(BigInteger propertyId) throws Exception {
         TransactionReceipt receipt = escrowContract.releaseFunds().send();
         logger.info("Funds released for property {}", propertyId);
     }
 
-    /**
-     * Retrieves the deployed PropertyOwnership contract address.
-     * @return The address of the PropertyOwnership contract
-     */
     public String getOwnershipContractAddress() {
         return ownershipContractAddress;
     }
